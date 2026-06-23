@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Caveat:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Marck+Script&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
   <style>
-    /* ----- СТИЛИ (без изменений) ----- */
+    /* ----- СТИЛИ ----- */
     * {
       margin: 0;
       padding: 0;
@@ -184,12 +184,12 @@
 
     /* ============ ПЕРВЫЙ ЭКРАН: КОНТЕНТ ============ */
     .first-content {
-      flex: 1 1 auto;
+      flex: 0 0 auto;
       display: flex;
       flex-direction: column;
       justify-content: center;
       width: 100%;
-      padding: 4vh 24px 0;
+      padding: 3vh 24px 0;
       text-align: center;
       min-height: 0;
     }
@@ -197,7 +197,7 @@
     .title-block {
       text-align: center;
       width: 100%;
-      margin-bottom: 14px;
+      margin-bottom: 10px;
     }
 
     .sub-title {
@@ -231,7 +231,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 8px;
+      margin-bottom: 4px;
     }
 
     .dialog-container {
@@ -268,20 +268,21 @@
       min-width: 60px;
     }
 
+    /* ===== УВЕЛИЧЕННОЕ ФОТО ДЕТЕЙ ===== */
     .hero-image-section {
-      flex: 0 0 auto;
+      flex: 1 1 auto;
       display: flex;
       justify-content: center;
       align-items: flex-end;
       min-height: 0;
-      padding: 0 12px 0;
+      padding: 0 8px 0;
       width: 100%;
-      max-height: 45vh;
+      max-height: 55vh;
     }
 
     .full-width-heart {
       width: 100%;
-      max-width: 480px;
+      max-width: 550px;
       height: 100%;
       display: flex;
       align-items: center;
@@ -291,7 +292,7 @@
     .kids-image {
       width: 100%;
       height: auto;
-      max-height: 45vh;
+      max-height: 55vh;
       object-fit: contain;
       filter: drop-shadow(0 4px 10px rgba(60, 42, 60, 0.08));
       border-radius: 8px 8px 0 0;
@@ -962,12 +963,13 @@
     /* ============ АДАПТИВНЫЕ МЕДИА-ЗАПРОСЫ ============ */
     @media (max-width: 480px) {
       .screen-first { margin-bottom: -4px; }
-      .first-content { padding: 3vh 14px 0; }
-      .title-block { margin-bottom: 10px; }
+      .first-content { padding: 2vh 14px 0; }
+      .title-block { margin-bottom: 8px; }
       .dialog-container { gap: 6px; }
-      .dialog-area { margin-bottom: 6px; }
-      .hero-image-section { max-height: 40vh; }
-      .kids-image { max-height: 40vh; }
+      .dialog-area { margin-bottom: 4px; }
+      .hero-image-section { max-height: 50vh; padding: 0 6px; }
+      .kids-image { max-height: 50vh; }
+      .full-width-heart { max-width: 400px; }
       .calendar-image-wrapper { max-width: 280px; }
       .location-photo-wrapper { max-width: 300px; }
       .screen-second { padding: 20px 14px 25px; }
@@ -994,11 +996,8 @@
       .wishes-text { font-size: clamp(0.95rem, 3.8vw, 1.15rem); }
       .kids-marquee { padding: 6px 0; }
       .kids-marquee-track span { font-size: clamp(0.7rem, 2vw, 0.85rem); padding: 0 25px 0 0; }
-      .full-width-heart { max-width: 360px; padding: 0 8px; }
       .location-btn { padding: 12px 26px; font-size: 1rem; }
       .final-form { gap: 16px; }
-      .hero-image-section { padding: 0 12px 0; }
-      .kids-image { max-height: 40vh; }
       .final-subtitle { font-size: clamp(0.95rem, 3.8vw, 1.15rem); }
       .final-wishes { margin-top: 15px; }
       .date-marquee-wrapper { margin-top: 6px; }
@@ -1006,9 +1005,10 @@
 
     @media (min-width: 481px) and (max-width: 767px) {
       .screen-first { margin-bottom: -4px; }
-      .first-content { padding: 3.5vh 22px 0; }
-      .hero-image-section { max-height: 42vh; }
-      .kids-image { max-height: 42vh; }
+      .first-content { padding: 2.5vh 22px 0; }
+      .hero-image-section { max-height: 52vh; }
+      .kids-image { max-height: 52vh; }
+      .full-width-heart { max-width: 460px; }
       .screen-second { padding: 25px 22px 28px; }
       .invitation-content { gap: 12px; padding-top: 18px; }
       .screen-third { padding: 45px 22px; }
@@ -1022,7 +1022,6 @@
       .gift-image { width: min(90%, 340px); }
       .submit-btn { margin-bottom: 12px; }
       .final-container { gap: 26px; }
-      .full-width-heart { max-width: 400px; }
       .kids-marquee-track span { font-size: clamp(0.8rem, 2.2vw, 0.95rem); }
       .final-wishes { margin-top: 18px; }
     }
@@ -1033,9 +1032,9 @@
       .dialog-text { font-size: 1.4rem; }
       .location-photo-wrapper { max-width: 450px; }
       .calendar-image-wrapper { max-width: 450px; }
-      .full-width-heart { max-width: 480px; }
-      .hero-image-section { max-height: 45vh; }
-      .kids-image { max-height: 45vh; }
+      .full-width-heart { max-width: 520px; }
+      .hero-image-section { max-height: 50vh; }
+      .kids-image { max-height: 50vh; }
     }
 
     @media (min-width: 768px) {
@@ -1061,17 +1060,19 @@
       .dresscode-container { gap: 24px; }
       .calendar-image-wrapper { max-width: 420px; }
       .submit-btn { min-width: 240px; padding: 18px 54px; margin-bottom: 15px; }
-      .full-width-heart { max-width: 520px; }
+      .full-width-heart { max-width: 550px; }
       .screen-first { margin-bottom: -5px; }
       .final-container { gap: 30px; }
       .final-wishes { margin-top: 22px; }
+      .hero-image-section { max-height: 50vh; }
+      .kids-image { max-height: 50vh; }
     }
   </style>
 </head>
 <body>
 
 <main class="invitation-card">
-  <!-- ЭКРАН 1 — РАСШИРЕН -->
+  <!-- ЭКРАН 1 — РАСШИРЕН С УВЕЛИЧЕННЫМ ФОТО -->
   <section class="screen screen-first">
     <div class="first-content">
       <div class="title-block fade-up-item delay-1">
