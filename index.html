@@ -189,7 +189,7 @@
       flex-direction: column;
       justify-content: center;
       width: 100%;
-      padding: 3vh 24px 0;
+      padding: 2vh 24px 0;
       text-align: center;
       min-height: 0;
     }
@@ -197,14 +197,14 @@
     .title-block {
       text-align: center;
       width: 100%;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
 
     .sub-title {
       display: block;
       font-family: "Bad Script", cursive;
       font-weight: 400;
-      font-size: clamp(1.2rem, 4.5vw, 1.8rem);
+      font-size: clamp(1.0rem, 4vw, 1.6rem);
       color: #c9a8cc;
       text-transform: none;
       letter-spacing: 2px;
@@ -216,7 +216,7 @@
       display: block;
       font-family: "Caveat", "Comic Sans MS", cursive;
       font-weight: 400;
-      font-size: clamp(3.5rem, 13vw, 6rem);
+      font-size: clamp(3.2rem, 12vw, 5.5rem);
       color: #c9a8cc;
       line-height: 0.9;
       letter-spacing: 1px;
@@ -231,7 +231,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
 
     .dialog-container {
@@ -248,7 +248,7 @@
       font-family: "Marck Script", "Brush Script MT", cursive;
       font-weight: 400;
       font-style: italic;
-      font-size: clamp(1rem, 3.8vw, 1.5rem);
+      font-size: clamp(0.9rem, 3.5vw, 1.4rem);
       color: #c9a8cc;
       line-height: 1.3;
       letter-spacing: 0.3px;
@@ -268,34 +268,34 @@
       min-width: 60px;
     }
 
-    /* ===== УВЕЛИЧЕННОЕ ФОТО ДЕТЕЙ — ПЛОТНО ПРИЖАТО К ЛЕНТЕ ===== */
+    /* ===== ФОТО ДЕТЕЙ — МАКСИМАЛЬНО РАСТЯНУТО, ПРИЖАТО К ЛЕНТЕ ===== */
     .hero-image-section {
       flex: 1 1 auto;
       display: flex;
       justify-content: center;
       align-items: flex-end;
       min-height: 0;
-      padding: 0 8px 0 8px;
+      padding: 0;
       width: 100%;
-      max-height: 55vh;
+      max-height: 65vh;
     }
 
     .full-width-heart {
       width: 100%;
-      max-width: 550px;
+      max-width: 600px;
       height: 100%;
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
     }
 
     .kids-image {
       width: 100%;
       height: auto;
-      max-height: 55vh;
+      max-height: 65vh;
       object-fit: contain;
       filter: drop-shadow(0 4px 10px rgba(60, 42, 60, 0.08));
-      border-radius: 8px 8px 0 0;
+      border-radius: 0;
       display: block;
       transform: translateY(0);
       transition: all .4s ease;
@@ -963,16 +963,16 @@
     /* ============ АДАПТИВНЫЕ МЕДИА-ЗАПРОСЫ ============ */
     @media (max-width: 480px) {
       .screen-first { margin-bottom: -4px; }
-      .first-content { padding: 2vh 14px 0; }
-      .title-block { margin-bottom: 8px; }
+      .first-content { padding: 1.5vh 14px 0; }
+      .title-block { margin-bottom: 4px; }
       .dialog-container { gap: 6px; }
-      .dialog-area { margin-bottom: 4px; }
+      .dialog-area { margin-bottom: 2px; }
       .hero-image-section { 
-        max-height: 50vh; 
-        padding: 0 6px 0 6px;
+        max-height: 60vh; 
+        padding: 0;
       }
-      .kids-image { max-height: 50vh; }
-      .full-width-heart { max-width: 400px; }
+      .kids-image { max-height: 60vh; }
+      .full-width-heart { max-width: 100%; }
       .calendar-image-wrapper { max-width: 280px; }
       .location-photo-wrapper { max-width: 300px; }
       .screen-second { padding: 20px 14px 25px; }
@@ -1008,13 +1008,13 @@
 
     @media (min-width: 481px) and (max-width: 767px) {
       .screen-first { margin-bottom: -4px; }
-      .first-content { padding: 2.5vh 22px 0; }
+      .first-content { padding: 2vh 22px 0; }
       .hero-image-section { 
-        max-height: 52vh;
-        padding: 0 8px 0 8px;
+        max-height: 62vh;
+        padding: 0;
       }
-      .kids-image { max-height: 52vh; }
-      .full-width-heart { max-width: 460px; }
+      .kids-image { max-height: 62vh; }
+      .full-width-heart { max-width: 100%; }
       .screen-second { padding: 25px 22px 28px; }
       .invitation-content { gap: 12px; padding-top: 18px; }
       .screen-third { padding: 45px 22px; }
@@ -1038,12 +1038,12 @@
       .dialog-text { font-size: 1.4rem; }
       .location-photo-wrapper { max-width: 450px; }
       .calendar-image-wrapper { max-width: 450px; }
-      .full-width-heart { max-width: 520px; }
+      .full-width-heart { max-width: 100%; }
       .hero-image-section { 
-        max-height: 50vh;
-        padding: 0 8px 0 8px;
+        max-height: 60vh;
+        padding: 0;
       }
-      .kids-image { max-height: 50vh; }
+      .kids-image { max-height: 60vh; }
     }
 
     @media (min-width: 768px) {
@@ -1069,22 +1069,22 @@
       .dresscode-container { gap: 24px; }
       .calendar-image-wrapper { max-width: 420px; }
       .submit-btn { min-width: 240px; padding: 18px 54px; margin-bottom: 15px; }
-      .full-width-heart { max-width: 550px; }
+      .full-width-heart { max-width: 100%; }
       .screen-first { margin-bottom: -5px; }
       .final-container { gap: 30px; }
       .final-wishes { margin-top: 22px; }
       .hero-image-section { 
-        max-height: 50vh;
-        padding: 0 8px 0 8px;
+        max-height: 60vh;
+        padding: 0;
       }
-      .kids-image { max-height: 50vh; }
+      .kids-image { max-height: 60vh; }
     }
   </style>
 </head>
 <body>
 
 <main class="invitation-card">
-  <!-- ЭКРАН 1 — РАСШИРЕН С УВЕЛИЧЕННЫМ ФОТО, БЕЗ ОТСТУПА ОТ ЛЕНТЫ -->
+  <!-- ЭКРАН 1 — ФОТО МАКСИМАЛЬНО РАСТЯНУТО И ПРИЖАТО К ЛЕНТЕ -->
   <section class="screen screen-first">
     <div class="first-content">
       <div class="title-block fade-up-item delay-1">
