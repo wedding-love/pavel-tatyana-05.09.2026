@@ -25,6 +25,8 @@
     body {
       min-height: 100%;
       min-height: -webkit-fill-available;
+      margin: 0;
+      padding: 0;
     }
 
     html {
@@ -52,6 +54,7 @@
     img {
       max-width: 100%;
       height: auto;
+      display: block;
     }
 
     .invitation-card {
@@ -118,17 +121,17 @@
       flex-shrink: 0;
     }
 
-    /* ============ ПЕРВЫЙ ЭКРАН — РАСШИРЕН ============ */
+    /* ============ ПЕРВЫЙ ЭКРАН — БЕЗ ОТСТУПОВ ============ */
     .screen-first {
       min-height: 100vh;
       min-height: 100dvh;
       display: flex;
       flex-direction: column;
       background-color: #fefad8;
-      padding-bottom: 0;
+      padding: 0;
+      margin: 0;
       overflow: hidden;
       overflow-x: hidden;
-      margin-bottom: -5px;
       justify-content: space-between;
     }
 
@@ -182,14 +185,14 @@
       min-height: auto;
     }
 
-    /* ============ ПЕРВЫЙ ЭКРАН: КОНТЕНТ ============ */
+    /* ============ ПЕРВЫЙ ЭКРАН: КОНТЕНТ — МАКСИМАЛЬНО СЖАТ ============ */
     .first-content {
       flex: 0 0 auto;
       display: flex;
       flex-direction: column;
       justify-content: center;
       width: 100%;
-      padding: 2vh 24px 0;
+      padding: 1.5vh 20px 0;
       text-align: center;
       min-height: 0;
     }
@@ -197,18 +200,18 @@
     .title-block {
       text-align: center;
       width: 100%;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .sub-title {
       display: block;
       font-family: "Bad Script", cursive;
       font-weight: 400;
-      font-size: clamp(1.0rem, 4vw, 1.6rem);
+      font-size: clamp(0.9rem, 3.5vw, 1.4rem);
       color: #c9a8cc;
       text-transform: none;
       letter-spacing: 2px;
-      margin-bottom: -4px;
+      margin-bottom: -2px;
       line-height: 1.1;
     }
 
@@ -216,13 +219,13 @@
       display: block;
       font-family: "Caveat", "Comic Sans MS", cursive;
       font-weight: 400;
-      font-size: clamp(3.2rem, 12vw, 5.5rem);
+      font-size: clamp(2.8rem, 11vw, 5rem);
       color: #c9a8cc;
       line-height: 0.9;
       letter-spacing: 1px;
       text-shadow: 1.5px 1.5px 0px rgba(201, 168, 204, 0.15);
       transform: rotate(-0.5deg);
-      margin-top: -5px;
+      margin-top: -4px;
       word-break: break-word;
     }
 
@@ -231,7 +234,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 2px;
+      margin-bottom: 0;
     }
 
     .dialog-container {
@@ -239,18 +242,18 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
-      padding: 0 4px;
+      padding: 0 2px;
     }
 
     .dialog-text {
       font-family: "Marck Script", "Brush Script MT", cursive;
       font-weight: 400;
       font-style: italic;
-      font-size: clamp(0.9rem, 3.5vw, 1.4rem);
+      font-size: clamp(0.8rem, 3vw, 1.2rem);
       color: #c9a8cc;
-      line-height: 1.3;
+      line-height: 1.2;
       letter-spacing: 0.3px;
       background: none;
       padding: 0;
@@ -259,16 +262,16 @@
     .dialog-left {
       text-align: left;
       flex: 1.2;
-      min-width: 100px;
+      min-width: 80px;
     }
 
     .dialog-right {
       text-align: right;
       flex: 0.9;
-      min-width: 60px;
+      min-width: 50px;
     }
 
-    /* ===== ФОТО ДЕТЕЙ — МАКСИМАЛЬНО РАСТЯНУТО, ПРИЖАТО К ЛЕНТЕ ===== */
+    /* ===== ФОТО ДЕТЕЙ — МАКСИМАЛЬНО, ПРИЖАТО К ЛЕНТЕ ===== */
     .hero-image-section {
       flex: 1 1 auto;
       display: flex;
@@ -276,33 +279,38 @@
       align-items: flex-end;
       min-height: 0;
       padding: 0;
+      margin: 0;
       width: 100%;
-      max-height: 65vh;
+      max-height: 70vh;
     }
 
     .full-width-heart {
       width: 100%;
-      max-width: 600px;
+      max-width: 100%;
       height: 100%;
       display: flex;
       align-items: flex-end;
       justify-content: center;
+      padding: 0;
+      margin: 0;
     }
 
     .kids-image {
       width: 100%;
       height: auto;
-      max-height: 65vh;
+      max-height: 70vh;
       object-fit: contain;
-      filter: drop-shadow(0 4px 10px rgba(60, 42, 60, 0.08));
+      filter: drop-shadow(0 2px 8px rgba(60, 42, 60, 0.06));
       border-radius: 0;
       display: block;
+      padding: 0;
+      margin: 0;
       transform: translateY(0);
       transition: all .4s ease;
     }
 
     .kids-image:hover {
-      transform: translateY(-3px);
+      transform: translateY(-2px);
     }
 
     /* ============ БЕГУЩАЯ СТРОКА "ВЫ ПРИГЛАШЕНЫ" ============ */
@@ -314,6 +322,7 @@
       background: #c9a8cc;
       padding: 10px 0;
       margin-top: 0;
+      margin-bottom: 0;
       flex-shrink: 0;
       position: relative;
       opacity: 1 !important;
@@ -349,7 +358,7 @@
       }
     }
 
-    /* ============ ВТОРОЙ ЭКРАН: ПРИГЛАШЕНИЕ ============ */
+    /* ============ ОСТАЛЬНЫЕ БЛОКИ (без изменений) ============ */
     .invitation-content {
       display: flex;
       flex-direction: column;
@@ -412,7 +421,6 @@
       object-fit: contain;
     }
 
-    /* ============ ТРЕТИЙ ЭКРАН (ЛОКАЦИЯ) ============ */
     .location-content {
       display: flex;
       flex-direction: column;
@@ -533,7 +541,6 @@
       pointer-events: none;
     }
 
-    /* ============ ЧЕТВЕРТЫЙ ЭКРАН: ТАЙМИНГ ============ */
     .timing-section-title {
       text-align: center;
       margin-bottom: 20px;
@@ -608,7 +615,6 @@
       font-weight: 400;
     }
 
-    /* ============ ПЯТЫЙ ЭКРАН: ДРЕСС-КОД ============ */
     .dresscode-container {
       width: 100%;
       display: flex;
@@ -667,7 +673,6 @@
       margin-bottom: 24px;
     }
 
-    /* ============ ШЕСТОЙ ЭКРАН: ПОЖЕЛАНИЯ ============ */
     .wishes-container {
       width: 100%;
       max-width: 500px;
@@ -708,7 +713,6 @@
       opacity: 0.95;
     }
 
-    /* ============ ОБЪЕДИНЕННЫЙ БЛОК: АНКЕТА + КОНТАКТЫ ============ */
     .final-container {
       width: 100%;
       max-width: 500px;
@@ -895,7 +899,6 @@
       transform: scale(1.02);
     }
 
-    /* ============ ДАТА МАРКИ ============ */
     .date-marquee-wrapper {
       width: 100vw;
       margin-left: calc(50% - 50vw);
@@ -962,17 +965,16 @@
 
     /* ============ АДАПТИВНЫЕ МЕДИА-ЗАПРОСЫ ============ */
     @media (max-width: 480px) {
-      .screen-first { margin-bottom: -4px; }
-      .first-content { padding: 1.5vh 14px 0; }
-      .title-block { margin-bottom: 4px; }
+      .first-content { padding: 1vh 12px 0; }
+      .title-block { margin-bottom: 2px; }
+      .primary-title { font-size: clamp(2.4rem, 10vw, 3.2rem); }
+      .sub-title { font-size: clamp(0.8rem, 3vw, 1rem); }
+      .dialog-text { font-size: clamp(0.7rem, 2.8vw, 0.95rem); }
       .dialog-container { gap: 6px; }
-      .dialog-area { margin-bottom: 2px; }
-      .hero-image-section { 
-        max-height: 60vh; 
-        padding: 0;
-      }
-      .kids-image { max-height: 60vh; }
-      .full-width-heart { max-width: 100%; }
+      .hero-image-section { max-height: 68vh; }
+      .kids-image { max-height: 68vh; }
+      .kids-marquee { padding: 6px 0; }
+      .kids-marquee-track span { font-size: clamp(0.7rem, 2vw, 0.85rem); padding: 0 25px 0 0; }
       .calendar-image-wrapper { max-width: 280px; }
       .location-photo-wrapper { max-width: 300px; }
       .screen-second { padding: 20px 14px 25px; }
@@ -997,8 +999,6 @@
       .invitation-greeting { font-size: clamp(1.2rem, 4.5vw, 1.6rem); }
       .dresscode-text { font-size: clamp(1rem, 4vw, 1.25rem); }
       .wishes-text { font-size: clamp(0.95rem, 3.8vw, 1.15rem); }
-      .kids-marquee { padding: 6px 0; }
-      .kids-marquee-track span { font-size: clamp(0.7rem, 2vw, 0.85rem); padding: 0 25px 0 0; }
       .location-btn { padding: 12px 26px; font-size: 1rem; }
       .final-form { gap: 16px; }
       .final-subtitle { font-size: clamp(0.95rem, 3.8vw, 1.15rem); }
@@ -1007,14 +1007,9 @@
     }
 
     @media (min-width: 481px) and (max-width: 767px) {
-      .screen-first { margin-bottom: -4px; }
-      .first-content { padding: 2vh 22px 0; }
-      .hero-image-section { 
-        max-height: 62vh;
-        padding: 0;
-      }
-      .kids-image { max-height: 62vh; }
-      .full-width-heart { max-width: 100%; }
+      .first-content { padding: 1.5vh 18px 0; }
+      .hero-image-section { max-height: 68vh; }
+      .kids-image { max-height: 68vh; }
       .screen-second { padding: 25px 22px 28px; }
       .invitation-content { gap: 12px; padding-top: 18px; }
       .screen-third { padding: 45px 22px; }
@@ -1033,17 +1028,12 @@
     }
 
     @media (min-width: 768px) and (max-width: 1024px) {
-      .screen-first { margin-bottom: -4px; }
-      .primary-title { font-size: 5.5rem; }
-      .dialog-text { font-size: 1.4rem; }
+      .primary-title { font-size: 5rem; }
+      .dialog-text { font-size: 1.3rem; }
       .location-photo-wrapper { max-width: 450px; }
       .calendar-image-wrapper { max-width: 450px; }
-      .full-width-heart { max-width: 100%; }
-      .hero-image-section { 
-        max-height: 60vh;
-        padding: 0;
-      }
-      .kids-image { max-height: 60vh; }
+      .hero-image-section { max-height: 68vh; }
+      .kids-image { max-height: 68vh; }
     }
 
     @media (min-width: 768px) {
@@ -1069,22 +1059,18 @@
       .dresscode-container { gap: 24px; }
       .calendar-image-wrapper { max-width: 420px; }
       .submit-btn { min-width: 240px; padding: 18px 54px; margin-bottom: 15px; }
-      .full-width-heart { max-width: 100%; }
-      .screen-first { margin-bottom: -5px; }
       .final-container { gap: 30px; }
       .final-wishes { margin-top: 22px; }
-      .hero-image-section { 
-        max-height: 60vh;
-        padding: 0;
-      }
-      .kids-image { max-height: 60vh; }
+      .hero-image-section { max-height: 68vh; }
+      .kids-image { max-height: 68vh; }
+      .first-content { padding: 2vh 24px 0; }
     }
   </style>
 </head>
 <body>
 
 <main class="invitation-card">
-  <!-- ЭКРАН 1 — ФОТО МАКСИМАЛЬНО РАСТЯНУТО И ПРИЖАТО К ЛЕНТЕ -->
+  <!-- ЭКРАН 1 — БЕЗ ОТСТУПОВ МЕЖДУ ФОТО И ЛЕНТОЙ -->
   <section class="screen screen-first">
     <div class="first-content">
       <div class="title-block fade-up-item delay-1">
@@ -1125,7 +1111,7 @@
     </div>
   </section>
 
-  <!-- ЭКРАН 2: Приглашение -->
+  <!-- ОСТАЛЬНЫЕ ЭКРАНЫ без изменений -->
   <section class="screen screen-second">
     <div class="invitation-content fade-up-item delay-1">
       <div class="invitation-greeting">
@@ -1141,7 +1127,6 @@
     </div>
   </section>
 
-  <!-- ЭКРАН 3: Локация -->
   <section class="screen screen-third">
     <div class="location-content">
       <div class="location-label fade-up-item">Локация</div>
@@ -1157,7 +1142,6 @@
     </div>
   </section>
 
-  <!-- ЭКРАН 4: ТАЙМИНГ -->
   <section class="screen screen-fourth">
     <div class="timing-section-title fade-up-item">
       <div class="timing-main-title">Тайминг дня</div>
@@ -1186,7 +1170,6 @@
     </div>
   </section>
 
-  <!-- ЭКРАН 5: ДРЕСС-КОД -->
   <section class="screen screen-fifth">
     <div class="dresscode-container">
       <div class="dresscode-title fade-up-item delay-1">Дресс-код</div>
@@ -1197,7 +1180,6 @@
     </div>
   </section>
 
-  <!-- ЭКРАН 6: ПОЖЕЛАНИЯ -->
   <section class="screen screen-sixth">
     <div class="wishes-container">
       <div class="wishes-title fade-up-item delay-1">Пожелания</div>
@@ -1206,7 +1188,6 @@
     </div>
   </section>
 
-  <!-- ФИНАЛЬНЫЙ БЛОК: АНКЕТА ГОСТЯ -->
   <section class="screen screen-final">
     <div class="final-container">
       <div class="final-title fade-up-item delay-1">Анкета гостя</div>
@@ -1246,7 +1227,6 @@
         <button type="button" class="submit-btn" onclick="submitForm()">Отправить</button>
       </form>
 
-      <!-- ЛЕНТА С ДАТОЙ -->
       <div class="date-marquee-wrapper fade-up-item delay-4">
         <div class="date-marquee">
           <div class="date-marquee-track">
@@ -1255,7 +1235,6 @@
         </div>
       </div>
 
-      <!-- НОВЫЙ БЛОК ПОСЛЕ ЛЕНТЫ -->
       <div class="final-wishes fade-up-item delay-5">
         <div class="final-big">Мы вас очень ждем!</div>
         <div class="final-small">Ваши Павел и Татьяна</div>
