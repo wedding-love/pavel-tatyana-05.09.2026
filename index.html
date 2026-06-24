@@ -185,14 +185,14 @@
       min-height: auto;
     }
 
-    /* ============ ПЕРВЫЙ ЭКРАН: ВЕРХНИЙ КОНТЕНТ — УВЕЛИЧЕН ============ */
+    /* ============ ПЕРВЫЙ ЭКРАН: ВЕРХНИЙ КОНТЕНТ — БЕЗ ОТСТУПОВ ============ */
     .first-content {
       flex: 0 0 auto;
       display: flex;
       flex-direction: column;
       justify-content: center;
       width: 100%;
-      padding: 1.5vh 20px 0;
+      padding: 1vh 20px 0;
       text-align: center;
       min-height: 0;
     }
@@ -200,32 +200,34 @@
     .title-block {
       text-align: center;
       width: 100%;
-      margin-bottom: 2px;
+      margin-bottom: 0;
+      line-height: 0;
     }
 
     .sub-title {
       display: block;
       font-family: "Bad Script", cursive;
       font-weight: 400;
-      font-size: clamp(1.4rem, 5vw, 2rem);
+      font-size: clamp(1.6rem, 5.5vw, 2.2rem);
       color: #c9a8cc;
       text-transform: none;
       letter-spacing: 4px;
-      margin-bottom: -4px;
-      line-height: 1.2;
+      line-height: 1.1;
+      padding-bottom: 0;
     }
 
     .primary-title {
       display: block;
       font-family: "Caveat", "Comic Sans MS", cursive;
       font-weight: 400;
-      font-size: clamp(4rem, 16vw, 6.5rem);
+      font-size: clamp(4.5rem, 18vw, 7.5rem);
       color: #c9a8cc;
-      line-height: 0.9;
+      line-height: 0.85;
       letter-spacing: 3px;
       text-shadow: 1.5px 1.5px 0px rgba(201, 168, 204, 0.15);
       transform: rotate(-0.5deg);
-      margin-top: -4px;
+      margin: 0;
+      padding: 0;
       word-break: break-word;
     }
 
@@ -234,7 +236,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 0;
+      padding: 0;
+      margin: 0;
+      line-height: 1;
     }
 
     .dialog-container {
@@ -245,18 +249,20 @@
       gap: 10px;
       flex-wrap: wrap;
       padding: 0 2px;
+      margin: 0;
     }
 
     .dialog-text {
       font-family: "Marck Script", "Brush Script MT", cursive;
       font-weight: 400;
       font-style: italic;
-      font-size: clamp(1rem, 3.5vw, 1.4rem);
+      font-size: clamp(1.1rem, 3.8vw, 1.6rem);
       color: #c9a8cc;
-      line-height: 1.3;
+      line-height: 1.2;
       letter-spacing: 0.5px;
       background: none;
       padding: 0;
+      margin: 0;
     }
 
     .dialog-left {
@@ -281,7 +287,7 @@
       padding: 0;
       margin: 0;
       width: 100%;
-      max-height: 74vh;
+      max-height: 76vh;
     }
 
     .full-width-heart {
@@ -298,7 +304,7 @@
     .kids-image {
       width: 100%;
       height: auto;
-      max-height: 74vh;
+      max-height: 76vh;
       object-fit: contain;
       filter: drop-shadow(0 2px 8px rgba(60, 42, 60, 0.06));
       border-radius: 0;
@@ -968,14 +974,14 @@
 
     /* ============ АДАПТИВНЫЕ МЕДИА-ЗАПРОСЫ ============ */
     @media (max-width: 480px) {
-      .first-content { padding: 1vh 12px 0; }
+      .first-content { padding: 0.5vh 12px 0; }
       .title-block { margin-bottom: 0; }
-      .primary-title { font-size: clamp(3rem, 13vw, 4rem); }
-      .sub-title { font-size: clamp(1.1rem, 4vw, 1.4rem); }
-      .dialog-text { font-size: clamp(0.8rem, 3.2vw, 1rem); }
+      .primary-title { font-size: clamp(3.2rem, 14vw, 4.5rem); }
+      .sub-title { font-size: clamp(1.2rem, 4.5vw, 1.6rem); }
+      .dialog-text { font-size: clamp(0.85rem, 3.5vw, 1.1rem); }
       .dialog-container { gap: 4px; }
-      .hero-image-section { max-height: 72vh; }
-      .kids-image { max-height: 72vh; }
+      .hero-image-section { max-height: 74vh; }
+      .kids-image { max-height: 74vh; }
       .kids-marquee { padding: 6px 0; }
       .kids-marquee-track span { font-size: clamp(0.75rem, 2.2vw, 0.9rem); padding: 0 25px 0 0; }
       .calendar-image-wrapper { max-width: 280px; }
@@ -1010,9 +1016,9 @@
     }
 
     @media (min-width: 481px) and (max-width: 767px) {
-      .first-content { padding: 1.5vh 18px 0; }
-      .hero-image-section { max-height: 72vh; }
-      .kids-image { max-height: 72vh; }
+      .first-content { padding: 1vh 18px 0; }
+      .hero-image-section { max-height: 74vh; }
+      .kids-image { max-height: 74vh; }
       .screen-second { padding: 25px 22px 28px; }
       .invitation-content { gap: 12px; padding-top: 18px; }
       .screen-third { padding: 45px 22px; }
@@ -1031,13 +1037,13 @@
     }
 
     @media (min-width: 768px) and (max-width: 1024px) {
-      .primary-title { font-size: 6rem; }
-      .sub-title { font-size: 1.8rem; }
-      .dialog-text { font-size: 1.4rem; }
+      .primary-title { font-size: 6.5rem; }
+      .sub-title { font-size: 2rem; }
+      .dialog-text { font-size: 1.5rem; }
       .location-photo-wrapper { max-width: 450px; }
       .calendar-image-wrapper { max-width: 450px; }
-      .hero-image-section { max-height: 72vh; }
-      .kids-image { max-height: 72vh; }
+      .hero-image-section { max-height: 74vh; }
+      .kids-image { max-height: 74vh; }
     }
 
     @media (min-width: 768px) {
@@ -1065,9 +1071,9 @@
       .submit-btn { min-width: 240px; padding: 18px 54px; margin-bottom: 15px; }
       .final-container { gap: 30px; }
       .final-wishes { margin-top: 22px; }
-      .hero-image-section { max-height: 72vh; }
-      .kids-image { max-height: 72vh; }
-      .first-content { padding: 2vh 24px 0; }
+      .hero-image-section { max-height: 74vh; }
+      .kids-image { max-height: 74vh; }
+      .first-content { padding: 1.5vh 24px 0; }
     }
   </style>
 </head>
