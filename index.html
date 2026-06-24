@@ -177,6 +177,15 @@
       min-height: auto;
     }
 
+    /* Новый блок со слайдером */
+    .screen-slider {
+      background-color: #fefad8;
+      padding: 50px 28px 60px 28px;
+      justify-content: center;
+      align-items: center;
+      min-height: auto;
+    }
+
     .screen-final {
       background: linear-gradient(145deg, #c9a8cc 0%, #b088b3 100%);
       padding: 50px 28px 40px 28px;
@@ -207,7 +216,7 @@
       display: block;
       font-family: "Bad Script", cursive;
       font-weight: 400;
-      font-size: clamp(1.6rem, 5.5vw, 2.2rem);
+      font-size: clamp(2.0rem, 7vw, 2.8rem); /* Увеличен */
       color: #c9a8cc;
       text-transform: none;
       letter-spacing: 4px;
@@ -219,7 +228,7 @@
       display: block;
       font-family: "Caveat", "Comic Sans MS", cursive;
       font-weight: 400;
-      font-size: clamp(4.5rem, 18vw, 7.5rem);
+      font-size: clamp(5.5rem, 20vw, 8.5rem); /* Увеличен */
       color: #c9a8cc;
       line-height: 0.85;
       letter-spacing: 3px;
@@ -255,7 +264,7 @@
       font-family: "Marck Script", "Brush Script MT", cursive;
       font-weight: 400;
       font-style: italic;
-      font-size: clamp(1.1rem, 3.8vw, 1.6rem);
+      font-size: clamp(1.4rem, 4.8vw, 2.0rem); /* Увеличен */
       color: #c9a8cc;
       line-height: 1.2;
       letter-spacing: 0.5px;
@@ -286,7 +295,7 @@
       padding: 0;
       margin: 0;
       width: 100%;
-      max-height: 72vh;
+      max-height: 68vh; /* Чуть уменьшено */
     }
 
     .full-width-heart {
@@ -303,7 +312,7 @@
     .kids-image {
       width: 100%;
       height: auto;
-      max-height: 72vh;
+      max-height: 68vh; /* Чуть уменьшено */
       object-fit: contain;
       filter: drop-shadow(0 2px 8px rgba(60, 42, 60, 0.06));
       border-radius: 0;
@@ -348,7 +357,7 @@
     .kids-marquee-track span {
       color: #fefad8;
       font-family: "Marck Script", cursive;
-      font-size: clamp(1rem, 3vw, 1.3rem);
+      font-size: clamp(1.2rem, 3.5vw, 1.6rem); /* Увеличен */
       padding: 0 40px 0 0;
       white-space: nowrap;
       text-transform: uppercase;
@@ -366,7 +375,105 @@
       }
     }
 
-    /* ============ ОСТАЛЬНЫЕ БЛОКИ (без изменений) ============ */
+    /* ============ СЛАЙДЕР ============ */
+    .slider-container {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+      overflow: hidden;
+      position: relative;
+      background: #fefad8;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(201, 168, 204, 0.2);
+    }
+
+    .slider-track {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.2, 0.9, 0.4, 1);
+      will-change: transform;
+    }
+
+    .slider-slide {
+      min-width: 100%;
+      box-sizing: border-box;
+      padding: 8px;
+      background: #fefad8;
+    }
+
+    .slider-slide img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+      border: 2px solid #fefad8;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .slider-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-top: 18px;
+    }
+
+    .slider-btn {
+      background: #c9a8cc;
+      border: none;
+      color: #fefad8;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      font-size: 1.4rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(201, 168, 204, 0.3);
+    }
+
+    .slider-btn:hover {
+      background: #b088b3;
+      transform: scale(1.05);
+    }
+
+    .slider-dots {
+      display: flex;
+      gap: 10px;
+    }
+
+    .slider-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #d4c4d6;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      padding: 0;
+    }
+
+    .slider-dot.active {
+      background: #c9a8cc;
+      transform: scale(1.3);
+    }
+
+    .slider-title {
+      font-family: "Playfair Display", serif;
+      font-weight: 600;
+      font-style: italic;
+      font-size: clamp(2rem, 6.5vw, 2.6rem);
+      color: #c9a8cc;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    /* ============ ОСТАЛЬНЫЕ БЛОКИ ============ */
     .invitation-content {
       display: flex;
       flex-direction: column;
@@ -383,7 +490,7 @@
     .invitation-greeting {
       font-family: "Bad Script", cursive;
       font-weight: 400;
-      font-size: clamp(1.4rem, 5vw, 2rem);
+      font-size: clamp(1.8rem, 6vw, 2.4rem); /* Увеличен */
       color: #c9a8cc;
       text-align: center;
       line-height: 1.9;
@@ -399,7 +506,7 @@
     .big-date {
       font-family: "Caveat", "Comic Sans MS", cursive;
       font-weight: 400;
-      font-size: clamp(3.5rem, 13vw, 5.5rem);
+      font-size: clamp(4.5rem, 15vw, 6.5rem); /* Увеличен */
       color: #c9a8cc;
       text-align: center;
       letter-spacing: 4px;
@@ -444,7 +551,7 @@
       font-family: "Playfair Display", serif;
       font-weight: 600;
       font-style: italic;
-      font-size: clamp(1.8rem, 6vw, 2.2rem);
+      font-size: clamp(2.2rem, 7vw, 2.8rem); /* Увеличен */
       color: #fefad8;
       text-align: center;
       letter-spacing: 3px;
@@ -455,7 +562,7 @@
       font-family: "Playfair Display", serif;
       font-weight: 600;
       font-style: italic;
-      font-size: clamp(2.2rem, 7.5vw, 3rem);
+      font-size: clamp(2.6rem, 8.5vw, 3.4rem); /* Увеличен */
       color: #fefad8;
       text-align: center;
       letter-spacing: 1px;
@@ -466,7 +573,7 @@
     .location-address {
       font-family: "Bad Script", cursive;
       font-weight: 400;
-      font-size: clamp(1.3rem, 4.5vw, 1.7rem);
+      font-size: clamp(1.6rem, 5vw, 2.0rem); /* Увеличен */
       color: #fefad8;
       text-align: center;
       letter-spacing: 0.5px;
@@ -482,7 +589,7 @@
       font-family: "Playfair Display", serif;
       font-weight: 600;
       font-style: italic;
-      font-size: 1.15rem;
+      font-size: 1.3rem; /* Увеличен */
       letter-spacing: 2px;
       color: #c9a8cc;
       cursor: pointer;
@@ -558,7 +665,7 @@
       font-family: "Playfair Display", serif;
       font-weight: 600;
       font-style: italic;
-      font-size: clamp(2rem, 6.5vw, 2.6rem);
+      font-size: clamp(2.4rem, 7.5vw, 3.0rem); /* Увеличен */
       color: #c9a8cc;
       letter-spacing: 4px;
       text-transform: uppercase;
@@ -600,7 +707,7 @@
     .timing-time {
       font-family: "Playfair Display", serif;
       font-weight: 600;
-      font-size: clamp(1.3rem, 4vw, 1.7rem);
+      font-size: clamp(1.6rem, 4.8vw, 2.0rem); /* Увеличен */
       color: #c9a8cc;
       white-space: nowrap;
       min-width: 70px;
@@ -609,14 +716,14 @@
     .timing-desc {
       font-family: "Bad Script", cursive;
       font-weight: 400;
-      font-size: clamp(1.05rem, 3.5vw, 1.3rem);
+      font-size: clamp(1.3rem, 4.2vw, 1.6rem); /* Увеличен */
       color: #3d2a3d;
       line-height: 1.3;
     }
 
     .timing-desc span {
       display: block;
-      font-size: clamp(0.8rem, 2.2vw, 0.95rem);
+      font-size: clamp(1.0rem, 2.8vw, 1.2rem); /* Увеличен */
       color: #999;
       font-style: italic;
       font-family: "Cormorant Garamond", serif;
@@ -638,7 +745,7 @@
       font-family: "Playfair Display", serif;
       font-weight: 600;
       font-style: italic;
-      font-size: clamp(2rem, 6.5vw, 2.6rem);
+      font-size: clamp(2.4rem, 7.5vw, 3.0rem); /* Увеличен */
       color: #fefad8;
       letter-spacing: 4px;
       text-transform: uppercase;
@@ -673,7 +780,7 @@
     .dresscode-text {
       font-family: "Bad Script", cursive;
       font-weight: 400;
-      font-size: clamp(1.15rem, 4.5vw, 1.5rem);
+      font-size: clamp(1.4rem, 5vw, 1.8rem); /* Увеличен */
       color: #3d2a3d;
       line-height: 1.9;
       text-align: center;
@@ -695,7 +802,7 @@
       font-family: "Playfair Display", serif;
       font-weight: 600;
       font-style: italic;
-      font-size: clamp(2rem, 6.5vw, 2.6rem);
+      font-size: clamp(2.4rem, 7.5vw, 3.0rem); /* Увеличен */
       color: #c9a8cc;
       letter-spacing: 4px;
       text-transform: uppercase;
@@ -705,7 +812,7 @@
     .wishes-text {
       font-family: "Bad Script", cursive;
       font-weight: 400;
-      font-size: clamp(1.05rem, 4vw, 1.4rem);
+      font-size: clamp(1.3rem, 4.8vw, 1.7rem); /* Увеличен */
       color: #c9a8cc;
       line-height: 1.9;
       text-align: center;
@@ -735,7 +842,7 @@
       font-family: "Playfair Display", serif;
       font-weight: 600;
       font-style: italic;
-      font-size: clamp(2rem, 6.5vw, 2.6rem);
+      font-size: clamp(2.4rem, 7.5vw, 3.0rem); /* Увеличен */
       color: #fefad8;
       letter-spacing: 4px;
       text-transform: uppercase;
@@ -745,7 +852,7 @@
     .final-subtitle {
       font-family: "Bad Script", cursive;
       font-weight: 400;
-      font-size: clamp(1.05rem, 4vw, 1.4rem);
+      font-size: clamp(1.3rem, 4.8vw, 1.7rem); /* Увеличен */
       color: #fefad8;
       text-align: center;
       line-height: 1.7;
@@ -770,7 +877,7 @@
     .form-label {
       font-family: "Bad Script", cursive;
       font-weight: 400;
-      font-size: 1.1rem;
+      font-size: 1.3rem; /* Увеличен */
       color: #fefad8;
       letter-spacing: 0.5px;
     }
@@ -782,7 +889,7 @@
       padding: 10px 4px;
       font-family: "Bad Script", cursive;
       font-weight: 400;
-      font-size: 1.1rem;
+      font-size: 1.3rem; /* Увеличен */
       color: #fefad8;
       outline: none;
       transition: border-color 0.2s ease;
@@ -810,7 +917,7 @@
       gap: 10px;
       font-family: "Bad Script", cursive;
       font-weight: 400;
-      font-size: 1.1rem;
+      font-size: 1.3rem; /* Увеличен */
       color: #fefad8;
       cursor: pointer;
     }
@@ -876,7 +983,7 @@
       gap: 8px;
       font-family: "Bad Script", cursive;
       font-weight: 400;
-      font-size: 1.05rem;
+      font-size: 1.25rem; /* Увеличен */
       color: #fefad8;
       cursor: pointer;
     }
@@ -888,7 +995,7 @@
       font-family: "Playfair Display", serif;
       font-weight: 600;
       font-style: italic;
-      font-size: 1.1rem;
+      font-size: 1.3rem; /* Увеличен */
       letter-spacing: 3px;
       color: #c9a8cc;
       cursor: pointer;
@@ -938,7 +1045,7 @@
       font-family: "Cormorant Garamond", serif;
       font-weight: 500;
       color: #c9a8cc;
-      font-size: clamp(1rem, 3.2vw, 1.2rem);
+      font-size: clamp(1.2rem, 3.8vw, 1.5rem); /* Увеличен */
       text-transform: uppercase;
       letter-spacing: 4px;
       padding-right: 50px;
@@ -956,7 +1063,7 @@
       font-family: "Playfair Display", serif;
       font-weight: 600;
       font-style: italic;
-      font-size: clamp(1.6rem, 5.5vw, 2.2rem);
+      font-size: clamp(2.0rem, 6.5vw, 2.6rem); /* Увеличен */
       color: #fefad8;
       letter-spacing: 2px;
       line-height: 1.3;
@@ -965,7 +1072,7 @@
     .final-small {
       font-family: "Bad Script", cursive;
       font-weight: 400;
-      font-size: clamp(1.1rem, 4.2vw, 1.5rem);
+      font-size: clamp(1.4rem, 5vw, 1.8rem); /* Увеличен */
       color: #fefad8;
       letter-spacing: 1px;
       margin-top: 6px;
@@ -975,15 +1082,15 @@
     @media (max-width: 480px) {
       .first-content { padding: 0.5vh 12px 0; }
       .title-block { margin-bottom: 4px; }
-      .primary-title { font-size: clamp(3.2rem, 14vw, 4.5rem); }
-      .sub-title { font-size: clamp(1.2rem, 4.5vw, 1.6rem); }
-      .dialog-text { font-size: clamp(0.85rem, 3.5vw, 1.1rem); }
+      .primary-title { font-size: clamp(4.0rem, 16vw, 5.5rem); }
+      .sub-title { font-size: clamp(1.6rem, 5.5vw, 2.0rem); }
+      .dialog-text { font-size: clamp(1.1rem, 4.2vw, 1.4rem); }
       .dialog-container { gap: 4px; }
       .dialog-area { margin-top: 4px; }
-      .hero-image-section { max-height: 70vh; }
-      .kids-image { max-height: 70vh; }
+      .hero-image-section { max-height: 65vh; }
+      .kids-image { max-height: 65vh; }
       .kids-marquee { padding: 6px 0; }
-      .kids-marquee-track span { font-size: clamp(0.75rem, 2.2vw, 0.9rem); padding: 0 25px 0 0; }
+      .kids-marquee-track span { font-size: clamp(0.9rem, 2.8vw, 1.1rem); padding: 0 25px 0 0; }
       .calendar-image-wrapper { max-width: 280px; }
       .location-photo-wrapper { max-width: 300px; }
       .screen-second { padding: 20px 14px 25px; }
@@ -992,6 +1099,7 @@
       .screen-fourth { padding: 35px 16px 45px; }
       .screen-fifth { padding: 40px 16px 30px; }
       .screen-sixth { padding: 40px 16px 50px 16px; }
+      .screen-slider { padding: 40px 16px 50px 16px; }
       .screen-final { padding: 40px 16px 35px 16px; }
       .location-img { border-width: 2px; }
       .timing-section-title { margin-bottom: 14px; }
@@ -1001,32 +1109,35 @@
       .dresscode-container { gap: 18px; }
       .gift-image { width: min(90%, 280px); }
       .drinks-grid { grid-template-columns: 1fr; gap: 10px; }
-      .submit-btn { min-width: 180px; padding: 14px 30px; font-size: 1rem; margin-bottom: 10px; }
+      .submit-btn { min-width: 180px; padding: 14px 30px; font-size: 1.1rem; margin-bottom: 10px; }
       .final-container { gap: 22px; }
-      .big-date { font-size: clamp(2.8rem, 11vw, 3.8rem); }
+      .big-date { font-size: clamp(3.5rem, 13vw, 4.5rem); }
       .location-content { gap: 16px; }
-      .invitation-greeting { font-size: clamp(1.2rem, 4.5vw, 1.6rem); }
-      .dresscode-text { font-size: clamp(1rem, 4vw, 1.25rem); }
-      .wishes-text { font-size: clamp(0.95rem, 3.8vw, 1.15rem); }
-      .location-btn { padding: 12px 26px; font-size: 1rem; }
+      .invitation-greeting { font-size: clamp(1.5rem, 5.5vw, 1.9rem); }
+      .dresscode-text { font-size: clamp(1.2rem, 4.8vw, 1.5rem); }
+      .wishes-text { font-size: clamp(1.1rem, 4.5vw, 1.4rem); }
+      .location-btn { padding: 12px 26px; font-size: 1.1rem; }
       .final-form { gap: 16px; }
-      .final-subtitle { font-size: clamp(0.95rem, 3.8vw, 1.15rem); }
+      .final-subtitle { font-size: clamp(1.1rem, 4.5vw, 1.4rem); }
       .final-wishes { margin-top: 15px; }
       .date-marquee-wrapper { margin-top: 6px; }
+      .slider-title { font-size: clamp(1.6rem, 5.5vw, 2.0rem); }
+      .slider-btn { width: 36px; height: 36px; font-size: 1.0rem; }
     }
 
     @media (min-width: 481px) and (max-width: 767px) {
       .first-content { padding: 1vh 18px 0; }
       .title-block { margin-bottom: 5px; }
       .dialog-area { margin-top: 5px; }
-      .hero-image-section { max-height: 70vh; }
-      .kids-image { max-height: 70vh; }
+      .hero-image-section { max-height: 65vh; }
+      .kids-image { max-height: 65vh; }
       .screen-second { padding: 25px 22px 28px; }
       .invitation-content { gap: 12px; padding-top: 18px; }
       .screen-third { padding: 45px 22px; }
       .screen-fourth { padding: 40px 22px 50px; }
       .screen-fifth { padding: 45px 22px 30px; }
       .screen-sixth { padding: 45px 22px 55px 22px; }
+      .screen-slider { padding: 45px 22px 55px 22px; }
       .screen-final { padding: 45px 22px 40px 22px; }
       .location-photo-wrapper { max-width: 360px; }
       .calendar-image-wrapper { max-width: 380px; }
@@ -1034,18 +1145,18 @@
       .gift-image { width: min(90%, 340px); }
       .submit-btn { margin-bottom: 12px; }
       .final-container { gap: 26px; }
-      .kids-marquee-track span { font-size: clamp(0.85rem, 2.4vw, 1rem); }
+      .kids-marquee-track span { font-size: clamp(1.0rem, 3.0vw, 1.2rem); }
       .final-wishes { margin-top: 18px; }
     }
 
     @media (min-width: 768px) and (max-width: 1024px) {
-      .primary-title { font-size: 6.5rem; }
-      .sub-title { font-size: 2rem; }
-      .dialog-text { font-size: 1.5rem; }
+      .primary-title { font-size: 7.5rem; }
+      .sub-title { font-size: 2.4rem; }
+      .dialog-text { font-size: 1.8rem; }
       .location-photo-wrapper { max-width: 450px; }
       .calendar-image-wrapper { max-width: 450px; }
-      .hero-image-section { max-height: 70vh; }
-      .kids-image { max-height: 70vh; }
+      .hero-image-section { max-height: 65vh; }
+      .kids-image { max-height: 65vh; }
     }
 
     @media (min-width: 768px) {
@@ -1066,6 +1177,7 @@
       .screen-fourth { padding: 50px 32px 60px; }
       .screen-fifth { padding: 55px 32px 40px; }
       .screen-sixth { padding: 55px 32px 65px 32px; }
+      .screen-slider { padding: 55px 32px 65px 32px; }
       .screen-final { padding: 50px 32px 45px 32px; }
       .location-content { gap: 22px; }
       .dresscode-container { gap: 24px; }
@@ -1073,8 +1185,8 @@
       .submit-btn { min-width: 240px; padding: 18px 54px; margin-bottom: 15px; }
       .final-container { gap: 30px; }
       .final-wishes { margin-top: 22px; }
-      .hero-image-section { max-height: 70vh; }
-      .kids-image { max-height: 70vh; }
+      .hero-image-section { max-height: 65vh; }
+      .kids-image { max-height: 65vh; }
       .first-content { padding: 1.5vh 24px 0; }
       .title-block { margin-bottom: 8px; }
       .dialog-area { margin-top: 8px; }
@@ -1125,7 +1237,7 @@
     </div>
   </section>
 
-  <!-- ОСТАЛЬНЫЕ ЭКРАНЫ без изменений -->
+  <!-- ОСТАЛЬНЫЕ ЭКРАНЫ -->
   <section class="screen screen-second">
     <div class="invitation-content fade-up-item delay-1">
       <div class="invitation-greeting">
@@ -1199,6 +1311,31 @@
       <div class="wishes-title fade-up-item delay-1">Пожелания</div>
       <div class="wishes-text fade-up-item delay-2">Ваше присутствие — самый ценный подарок. Будем благодарны за конверт с тёплыми пожеланиями. Главное — что вы будете рядом с нами в этот день!</div>
       <div class="fade-up-item delay-3"><img src="подарок.png" alt="Подарок" class="gift-image" onerror="this.src='https://placehold.co/400x300/c9a8cc/fefad8?text=🎁';"></div>
+    </div>
+  </section>
+
+  <!-- НОВЫЙ БЛОК СО СЛАЙДЕРОМ ФОТО -->
+  <section class="screen screen-slider">
+    <div class="slider-title fade-up-item delay-1">Свадебные моменты</div>
+    <div class="slider-container fade-up-item delay-2">
+      <div class="slider-track" id="sliderTrack">
+        <div class="slider-slide"><img src="2a889f31-8133-4c47-91d1-0798c13ea38f - Tatiana Kaplina.jpeg" alt="Фото 1"></div>
+        <div class="slider-slide"><img src="7447c377-2193-4f6e-a0ea-e8de186a8de6 - Tatiana Kaplina.jpeg" alt="Фото 2"></div>
+        <div class="slider-slide"><img src="IMG_0208 - Tatiana Kaplina.jpeg" alt="Фото 3"></div>
+        <div class="slider-slide"><img src="F46B52D4-FAC7-4A59-9E0B-4E3900EB7B16 - Tatiana Kaplina.webp" alt="Фото 4"></div>
+        <div class="slider-slide"><img src="IMG_0556 - Tatiana Kaplina.jpeg" alt="Фото 5"></div>
+      </div>
+    </div>
+    <div class="slider-controls">
+      <button class="slider-btn" id="sliderPrev">‹</button>
+      <div class="slider-dots" id="sliderDots">
+        <button class="slider-dot active" data-index="0"></button>
+        <button class="slider-dot" data-index="1"></button>
+        <button class="slider-dot" data-index="2"></button>
+        <button class="slider-dot" data-index="3"></button>
+        <button class="slider-dot" data-index="4"></button>
+      </div>
+      <button class="slider-btn" id="sliderNext">›</button>
     </div>
   </section>
 
@@ -1327,6 +1464,40 @@
     window.addEventListener('resize', setAppHeight);
     window.addEventListener('orientationchange', setAppHeight);
     setAppHeight();
+
+    // СЛАЙДЕР
+    const track = document.getElementById('sliderTrack');
+    const dots = document.querySelectorAll('.slider-dot');
+    const prevBtn = document.getElementById('sliderPrev');
+    const nextBtn = document.getElementById('sliderNext');
+    let currentIndex = 0;
+    const totalSlides = dots.length;
+
+    function goToSlide(index) {
+      if (index < 0) index = totalSlides - 1;
+      if (index >= totalSlides) index = 0;
+      currentIndex = index;
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
+    }
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => goToSlide(index));
+    });
+
+    prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+    nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+
+    // Автопрокрутка
+    let autoplay = setInterval(() => goToSlide(currentIndex + 1), 4000);
+
+    const sliderContainer = document.querySelector('.slider-container');
+    sliderContainer.addEventListener('mouseenter', () => clearInterval(autoplay));
+    sliderContainer.addEventListener('mouseleave', () => {
+      autoplay = setInterval(() => goToSlide(currentIndex + 1), 4000);
+    });
   })();
 
   function submitForm() {
