@@ -206,7 +206,7 @@
       flex-direction: column;
       justify-content: center;
       width: 100%;
-      padding: 0.5vh 20px 0;
+      padding: 1.5vh 20px 0;
       text-align: center;
       min-height: 0;
     }
@@ -250,7 +250,7 @@
       align-items: center;
       justify-content: center;
       padding: 0;
-      margin: 2px 0 0 0;
+      margin: 4px 0 0 0;
       line-height: 1;
     }
 
@@ -290,7 +290,7 @@
       min-width: 50px;
     }
 
-    /* ===== ФОТО ДЕТЕЙ ===== */
+    /* ===== ФОТО ДЕТЕЙ — УМЕНЬШЕНО ===== */
     .hero-image-section {
       flex: 1 1 auto;
       display: flex;
@@ -300,7 +300,7 @@
       padding: 0;
       margin: 0;
       width: 100%;
-      max-height: 68vh;
+      max-height: 55vh;
     }
 
     .full-width-heart {
@@ -317,7 +317,7 @@
     .kids-image {
       width: 100%;
       height: auto;
-      max-height: 68vh;
+      max-height: 55vh;
       object-fit: contain;
       filter: drop-shadow(0 2px 8px rgba(60, 42, 60, 0.06));
       border-radius: 0;
@@ -383,7 +383,7 @@
     /* ============ СЛАЙДЕР ============ */
     .slider-container {
       width: 100%;
-      max-width: 500px;
+      max-width: 420px;
       margin: 0 auto;
       overflow: hidden;
       position: relative;
@@ -401,19 +401,20 @@
     .slider-slide {
       min-width: 100%;
       box-sizing: border-box;
-      padding: 8px;
+      padding: 6px;
       background: #fefad8;
     }
 
     .slider-slide img {
       width: 100%;
       height: auto;
-      aspect-ratio: 2 / 3;
+      aspect-ratio: 3 / 4;
       object-fit: cover;
       border-radius: 12px;
       display: block;
       border: 2px solid #fefad8;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      max-height: 60vh;
     }
 
     .slider-controls {
@@ -421,17 +422,17 @@
       justify-content: center;
       align-items: center;
       gap: 20px;
-      margin-top: 18px;
+      margin-top: 16px;
     }
 
     .slider-btn {
       background: #c9a8cc;
       border: none;
       color: #fefad8;
-      width: 44px;
-      height: 44px;
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       cursor: pointer;
       transition: all 0.2s ease;
       display: flex;
@@ -447,12 +448,12 @@
 
     .slider-dots {
       display: flex;
-      gap: 10px;
+      gap: 8px;
     }
 
     .slider-dot {
-      width: 10px;
-      height: 10px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: #d4c4d6;
       border: none;
@@ -475,7 +476,7 @@
       letter-spacing: 4px;
       text-transform: uppercase;
       text-align: center;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     /* ============ ОСТАЛЬНЫЕ БЛОКИ (стандартный шрифт) ============ */
@@ -1085,15 +1086,15 @@
 
     /* ============ АДАПТИВНЫЕ МЕДИА-ЗАПРОСЫ ============ */
     @media (max-width: 480px) {
-      .first-content { padding: 0.2vh 12px 0; }
+      .first-content { padding: 0.8vh 12px 0; }
       .title-block { margin-bottom: 2px; }
       .primary-title { font-size: clamp(4.5rem, 18vw, 6rem); }
       .sub-title { font-size: clamp(1.8rem, 6vw, 2.4rem); }
       .dialog-text { font-size: clamp(1.2rem, 4.5vw, 1.6rem); }
       .dialog-container { gap: 4px; }
       .dialog-area { margin-top: 2px; }
-      .hero-image-section { max-height: 65vh; }
-      .kids-image { max-height: 65vh; }
+      .hero-image-section { max-height: 50vh; }
+      .kids-image { max-height: 50vh; }
       .kids-marquee { padding: 6px 0; }
       .kids-marquee-track span { font-size: clamp(0.9rem, 2.8vw, 1.1rem); padding: 0 25px 0 0; }
       .calendar-image-wrapper { max-width: 280px; }
@@ -1127,16 +1128,18 @@
       .final-wishes { margin-top: 15px; }
       .date-marquee-wrapper { margin-top: 6px; }
       .slider-title { font-size: clamp(1.6rem, 5.5vw, 2.0rem); }
-      .slider-btn { width: 36px; height: 36px; font-size: 1.0rem; }
-      .slider-slide img { aspect-ratio: 2 / 3; }
+      .slider-btn { width: 32px; height: 32px; font-size: 1rem; }
+      .slider-container { max-width: 300px; }
+      .slider-slide img { aspect-ratio: 3 / 4; max-height: 50vh; }
+      .slider-controls { gap: 14px; margin-top: 12px; }
     }
 
     @media (min-width: 481px) and (max-width: 767px) {
-      .first-content { padding: 0.5vh 18px 0; }
+      .first-content { padding: 1vh 18px 0; }
       .title-block { margin-bottom: 3px; }
       .dialog-area { margin-top: 3px; }
-      .hero-image-section { max-height: 65vh; }
-      .kids-image { max-height: 65vh; }
+      .hero-image-section { max-height: 50vh; }
+      .kids-image { max-height: 50vh; }
       .screen-second { padding: 25px 22px 28px; }
       .invitation-content { gap: 12px; padding-top: 18px; }
       .screen-third { padding: 45px 22px; }
@@ -1153,7 +1156,8 @@
       .final-container { gap: 26px; }
       .kids-marquee-track span { font-size: clamp(1.0rem, 3.0vw, 1.2rem); }
       .final-wishes { margin-top: 18px; }
-      .slider-slide img { aspect-ratio: 2 / 3; }
+      .slider-slide img { aspect-ratio: 3 / 4; max-height: 55vh; }
+      .slider-container { max-width: 360px; }
     }
 
     @media (min-width: 768px) and (max-width: 1024px) {
@@ -1162,9 +1166,10 @@
       .dialog-text { font-size: 2rem; }
       .location-photo-wrapper { max-width: 450px; }
       .calendar-image-wrapper { max-width: 450px; }
-      .hero-image-section { max-height: 65vh; }
-      .kids-image { max-height: 65vh; }
-      .slider-slide img { aspect-ratio: 2 / 3; }
+      .hero-image-section { max-height: 50vh; }
+      .kids-image { max-height: 50vh; }
+      .slider-slide img { aspect-ratio: 3 / 4; }
+      .slider-container { max-width: 400px; }
     }
 
     @media (min-width: 768px) {
@@ -1195,19 +1200,20 @@
       .submit-btn { min-width: 240px; padding: 18px 54px; margin-bottom: 15px; }
       .final-container { gap: 30px; }
       .final-wishes { margin-top: 22px; }
-      .hero-image-section { max-height: 65vh; }
-      .kids-image { max-height: 65vh; }
-      .first-content { padding: 0.8vh 24px 0; }
+      .hero-image-section { max-height: 50vh; }
+      .kids-image { max-height: 50vh; }
+      .first-content { padding: 1.5vh 24px 0; }
       .title-block { margin-bottom: 4px; }
       .dialog-area { margin-top: 4px; }
-      .slider-slide img { aspect-ratio: 2 / 3; }
+      .slider-slide img { aspect-ratio: 3 / 4; }
+      .slider-container { max-width: 400px; }
     }
   </style>
 </head>
 <body>
 
 <main class="invitation-card">
-  <!-- ЭКРАН 1 — ФИКСИРОВАННАЯ ВЫСОТА, УВЕЛИЧЕННЫЙ ШРИФТ -->
+  <!-- ЭКРАН 1 — ФИКСИРОВАННАЯ ВЫСОТА, УВЕЛИЧЕННЫЙ ШРИФТ, УМЕНЬШЕННОЕ ФОТО -->
   <section class="screen screen-first">
     <div class="first-content">
       <div class="title-block fade-up-item delay-1">
@@ -1325,12 +1331,11 @@
     </div>
   </section>
 
-  <!-- БЛОК СО СЛАЙДЕРОМ "НАШИ МОМЕНТЫ" — ФОТО ПЕРЕСТАВЛЕНЫ, ВЕРТИКАЛЬНЫЕ -->
+  <!-- БЛОК СО СЛАЙДЕРОМ "НАШИ МОМЕНТЫ" — УМЕНЬШЕННЫЙ РАЗМЕР ФОТО -->
   <section class="screen screen-slider">
     <div class="slider-title fade-up-item delay-1">Наши моменты</div>
     <div class="slider-container fade-up-item delay-2">
       <div class="slider-track" id="sliderTrack">
-        <!-- Второе фото теперь первое -->
         <div class="slider-slide"><img src="7447c377-2193-4f6e-a0ea-e8de186a8de6 - Tatiana Kaplina.jpeg" alt="Фото 1"></div>
         <div class="slider-slide"><img src="2a889f31-8133-4c47-91d1-0798c13ea38f - Tatiana Kaplina.jpeg" alt="Фото 2"></div>
         <div class="slider-slide"><img src="IMG_0208 - Tatiana Kaplina.jpeg" alt="Фото 3"></div>
