@@ -268,14 +268,14 @@
       min-width: 60px;
     }
 
-    /* ===== УВЕЛИЧЕННОЕ ФОТО ДЕТЕЙ ===== */
+    /* ===== УВЕЛИЧЕННОЕ ФОТО ДЕТЕЙ — ПЛОТНО ПРИЖАТО К ЛЕНТЕ ===== */
     .hero-image-section {
       flex: 1 1 auto;
       display: flex;
       justify-content: center;
       align-items: flex-end;
       min-height: 0;
-      padding: 0 8px 0;
+      padding: 0 8px 0 8px;
       width: 100%;
       max-height: 55vh;
     }
@@ -297,12 +297,12 @@
       filter: drop-shadow(0 4px 10px rgba(60, 42, 60, 0.08));
       border-radius: 8px 8px 0 0;
       display: block;
-      transform: translateY(3px);
+      transform: translateY(0);
       transition: all .4s ease;
     }
 
     .kids-image:hover {
-      transform: translateY(0);
+      transform: translateY(-3px);
     }
 
     /* ============ БЕГУЩАЯ СТРОКА "ВЫ ПРИГЛАШЕНЫ" ============ */
@@ -967,7 +967,10 @@
       .title-block { margin-bottom: 8px; }
       .dialog-container { gap: 6px; }
       .dialog-area { margin-bottom: 4px; }
-      .hero-image-section { max-height: 50vh; padding: 0 6px; }
+      .hero-image-section { 
+        max-height: 50vh; 
+        padding: 0 6px 0 6px;
+      }
       .kids-image { max-height: 50vh; }
       .full-width-heart { max-width: 400px; }
       .calendar-image-wrapper { max-width: 280px; }
@@ -1006,7 +1009,10 @@
     @media (min-width: 481px) and (max-width: 767px) {
       .screen-first { margin-bottom: -4px; }
       .first-content { padding: 2.5vh 22px 0; }
-      .hero-image-section { max-height: 52vh; }
+      .hero-image-section { 
+        max-height: 52vh;
+        padding: 0 8px 0 8px;
+      }
       .kids-image { max-height: 52vh; }
       .full-width-heart { max-width: 460px; }
       .screen-second { padding: 25px 22px 28px; }
@@ -1033,7 +1039,10 @@
       .location-photo-wrapper { max-width: 450px; }
       .calendar-image-wrapper { max-width: 450px; }
       .full-width-heart { max-width: 520px; }
-      .hero-image-section { max-height: 50vh; }
+      .hero-image-section { 
+        max-height: 50vh;
+        padding: 0 8px 0 8px;
+      }
       .kids-image { max-height: 50vh; }
     }
 
@@ -1064,7 +1073,10 @@
       .screen-first { margin-bottom: -5px; }
       .final-container { gap: 30px; }
       .final-wishes { margin-top: 22px; }
-      .hero-image-section { max-height: 50vh; }
+      .hero-image-section { 
+        max-height: 50vh;
+        padding: 0 8px 0 8px;
+      }
       .kids-image { max-height: 50vh; }
     }
   </style>
@@ -1072,7 +1084,7 @@
 <body>
 
 <main class="invitation-card">
-  <!-- ЭКРАН 1 — РАСШИРЕН С УВЕЛИЧЕННЫМ ФОТО -->
+  <!-- ЭКРАН 1 — РАСШИРЕН С УВЕЛИЧЕННЫМ ФОТО, БЕЗ ОТСТУПА ОТ ЛЕНТЫ -->
   <section class="screen screen-first">
     <div class="first-content">
       <div class="title-block fade-up-item delay-1">
