@@ -42,7 +42,7 @@
       font-weight: 400;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       min-height: 100vh;
       min-height: 100dvh;
       padding: 0;
@@ -121,10 +121,14 @@
       flex-shrink: 0;
     }
 
-    /* ============ ПЕРВЫЙ ЭКРАН — БЕЗ ОТСТУПОВ ============ */
+    /* ============ ПЕРВЫЙ ЭКРАН — ФИКСИРОВАННАЯ ВЫСОТА ============ */
     .screen-first {
+      height: 100vh;
+      height: 100dvh;
       min-height: 100vh;
       min-height: 100dvh;
+      max-height: 100vh;
+      max-height: 100dvh;
       display: flex;
       flex-direction: column;
       background-color: #fefad8;
@@ -133,6 +137,8 @@
       overflow: hidden;
       overflow-x: hidden;
       justify-content: flex-start;
+      flex-shrink: 0;
+      position: relative;
     }
 
     .screen-second {
@@ -177,7 +183,6 @@
       min-height: auto;
     }
 
-    /* Новый блок со слайдером */
     .screen-slider {
       background-color: #fefad8;
       padding: 50px 28px 60px 28px;
@@ -194,14 +199,14 @@
       min-height: auto;
     }
 
-    /* ============ ПЕРВЫЙ ЭКРАН: ВЕРХНИЙ КОНТЕНТ ============ */
+    /* ============ ПЕРВЫЙ ЭКРАН: УВЕЛИЧЕННЫЙ ШРИФТ ============ */
     .first-content {
       flex: 0 0 auto;
       display: flex;
       flex-direction: column;
       justify-content: center;
       width: 100%;
-      padding: 1vh 20px 0;
+      padding: 0.5vh 20px 0;
       text-align: center;
       min-height: 0;
     }
@@ -209,14 +214,14 @@
     .title-block {
       text-align: center;
       width: 100%;
-      margin-bottom: 6px;
+      margin-bottom: 2px;
     }
 
     .sub-title {
       display: block;
       font-family: "Bad Script", cursive;
       font-weight: 400;
-      font-size: clamp(2.0rem, 7vw, 2.8rem); /* Увеличен */
+      font-size: clamp(2.2rem, 8vw, 3.2rem);
       color: #c9a8cc;
       text-transform: none;
       letter-spacing: 4px;
@@ -228,7 +233,7 @@
       display: block;
       font-family: "Caveat", "Comic Sans MS", cursive;
       font-weight: 400;
-      font-size: clamp(5.5rem, 20vw, 8.5rem); /* Увеличен */
+      font-size: clamp(6rem, 22vw, 9rem);
       color: #c9a8cc;
       line-height: 0.85;
       letter-spacing: 3px;
@@ -245,7 +250,7 @@
       align-items: center;
       justify-content: center;
       padding: 0;
-      margin: 6px 0 0 0;
+      margin: 2px 0 0 0;
       line-height: 1;
     }
 
@@ -264,7 +269,7 @@
       font-family: "Marck Script", "Brush Script MT", cursive;
       font-weight: 400;
       font-style: italic;
-      font-size: clamp(1.4rem, 4.8vw, 2.0rem); /* Увеличен */
+      font-size: clamp(1.6rem, 5.5vw, 2.2rem);
       color: #c9a8cc;
       line-height: 1.2;
       letter-spacing: 0.5px;
@@ -285,7 +290,7 @@
       min-width: 50px;
     }
 
-    /* ===== ФОТО ДЕТЕЙ — ПРИЖАТО К ЛЕНТЕ ===== */
+    /* ===== ФОТО ДЕТЕЙ ===== */
     .hero-image-section {
       flex: 1 1 auto;
       display: flex;
@@ -295,7 +300,7 @@
       padding: 0;
       margin: 0;
       width: 100%;
-      max-height: 68vh; /* Чуть уменьшено */
+      max-height: 68vh;
     }
 
     .full-width-heart {
@@ -312,7 +317,7 @@
     .kids-image {
       width: 100%;
       height: auto;
-      max-height: 68vh; /* Чуть уменьшено */
+      max-height: 68vh;
       object-fit: contain;
       filter: drop-shadow(0 2px 8px rgba(60, 42, 60, 0.06));
       border-radius: 0;
@@ -327,7 +332,7 @@
       transform: translateY(-2px);
     }
 
-    /* ============ БЕГУЩАЯ СТРОКА — ПРИЖАТА МАКСИМАЛЬНО ============ */
+    /* ============ БЕГУЩАЯ СТРОКА ============ */
     .kids-marquee {
       width: 100vw;
       margin-left: calc(50% - 50vw);
@@ -357,7 +362,7 @@
     .kids-marquee-track span {
       color: #fefad8;
       font-family: "Marck Script", cursive;
-      font-size: clamp(1.2rem, 3.5vw, 1.6rem); /* Увеличен */
+      font-size: clamp(1.2rem, 3.5vw, 1.6rem);
       padding: 0 40px 0 0;
       white-space: nowrap;
       text-transform: uppercase;
@@ -403,7 +408,7 @@
     .slider-slide img {
       width: 100%;
       height: auto;
-      aspect-ratio: 4 / 3;
+      aspect-ratio: 3 / 2;
       object-fit: cover;
       border-radius: 12px;
       display: block;
@@ -473,7 +478,7 @@
       margin-bottom: 24px;
     }
 
-    /* ============ ОСТАЛЬНЫЕ БЛОКИ ============ */
+    /* ============ ОСТАЛЬНЫЕ БЛОКИ (стандартный шрифт) ============ */
     .invitation-content {
       display: flex;
       flex-direction: column;
@@ -490,7 +495,7 @@
     .invitation-greeting {
       font-family: "Bad Script", cursive;
       font-weight: 400;
-      font-size: clamp(1.8rem, 6vw, 2.4rem); /* Увеличен */
+      font-size: clamp(1.4rem, 5vw, 2rem);
       color: #c9a8cc;
       text-align: center;
       line-height: 1.9;
@@ -506,7 +511,7 @@
     .big-date {
       font-family: "Caveat", "Comic Sans MS", cursive;
       font-weight: 400;
-      font-size: clamp(4.5rem, 15vw, 6.5rem); /* Увеличен */
+      font-size: clamp(3.5rem, 13vw, 5.5rem);
       color: #c9a8cc;
       text-align: center;
       letter-spacing: 4px;
@@ -551,7 +556,7 @@
       font-family: "Playfair Display", serif;
       font-weight: 600;
       font-style: italic;
-      font-size: clamp(2.2rem, 7vw, 2.8rem); /* Увеличен */
+      font-size: clamp(1.8rem, 6vw, 2.2rem);
       color: #fefad8;
       text-align: center;
       letter-spacing: 3px;
@@ -562,7 +567,7 @@
       font-family: "Playfair Display", serif;
       font-weight: 600;
       font-style: italic;
-      font-size: clamp(2.6rem, 8.5vw, 3.4rem); /* Увеличен */
+      font-size: clamp(2.2rem, 7.5vw, 3rem);
       color: #fefad8;
       text-align: center;
       letter-spacing: 1px;
@@ -573,7 +578,7 @@
     .location-address {
       font-family: "Bad Script", cursive;
       font-weight: 400;
-      font-size: clamp(1.6rem, 5vw, 2.0rem); /* Увеличен */
+      font-size: clamp(1.3rem, 4.5vw, 1.7rem);
       color: #fefad8;
       text-align: center;
       letter-spacing: 0.5px;
@@ -589,7 +594,7 @@
       font-family: "Playfair Display", serif;
       font-weight: 600;
       font-style: italic;
-      font-size: 1.3rem; /* Увеличен */
+      font-size: 1.15rem;
       letter-spacing: 2px;
       color: #c9a8cc;
       cursor: pointer;
@@ -665,7 +670,7 @@
       font-family: "Playfair Display", serif;
       font-weight: 600;
       font-style: italic;
-      font-size: clamp(2.4rem, 7.5vw, 3.0rem); /* Увеличен */
+      font-size: clamp(2rem, 6.5vw, 2.6rem);
       color: #c9a8cc;
       letter-spacing: 4px;
       text-transform: uppercase;
@@ -707,7 +712,7 @@
     .timing-time {
       font-family: "Playfair Display", serif;
       font-weight: 600;
-      font-size: clamp(1.6rem, 4.8vw, 2.0rem); /* Увеличен */
+      font-size: clamp(1.3rem, 4vw, 1.7rem);
       color: #c9a8cc;
       white-space: nowrap;
       min-width: 70px;
@@ -716,14 +721,14 @@
     .timing-desc {
       font-family: "Bad Script", cursive;
       font-weight: 400;
-      font-size: clamp(1.3rem, 4.2vw, 1.6rem); /* Увеличен */
+      font-size: clamp(1.05rem, 3.5vw, 1.3rem);
       color: #3d2a3d;
       line-height: 1.3;
     }
 
     .timing-desc span {
       display: block;
-      font-size: clamp(1.0rem, 2.8vw, 1.2rem); /* Увеличен */
+      font-size: clamp(0.8rem, 2.2vw, 0.95rem);
       color: #999;
       font-style: italic;
       font-family: "Cormorant Garamond", serif;
@@ -745,7 +750,7 @@
       font-family: "Playfair Display", serif;
       font-weight: 600;
       font-style: italic;
-      font-size: clamp(2.4rem, 7.5vw, 3.0rem); /* Увеличен */
+      font-size: clamp(2rem, 6.5vw, 2.6rem);
       color: #fefad8;
       letter-spacing: 4px;
       text-transform: uppercase;
@@ -780,7 +785,7 @@
     .dresscode-text {
       font-family: "Bad Script", cursive;
       font-weight: 400;
-      font-size: clamp(1.4rem, 5vw, 1.8rem); /* Увеличен */
+      font-size: clamp(1.15rem, 4.5vw, 1.5rem);
       color: #3d2a3d;
       line-height: 1.9;
       text-align: center;
@@ -802,7 +807,7 @@
       font-family: "Playfair Display", serif;
       font-weight: 600;
       font-style: italic;
-      font-size: clamp(2.4rem, 7.5vw, 3.0rem); /* Увеличен */
+      font-size: clamp(2rem, 6.5vw, 2.6rem);
       color: #c9a8cc;
       letter-spacing: 4px;
       text-transform: uppercase;
@@ -812,7 +817,7 @@
     .wishes-text {
       font-family: "Bad Script", cursive;
       font-weight: 400;
-      font-size: clamp(1.3rem, 4.8vw, 1.7rem); /* Увеличен */
+      font-size: clamp(1.05rem, 4vw, 1.4rem);
       color: #c9a8cc;
       line-height: 1.9;
       text-align: center;
@@ -842,7 +847,7 @@
       font-family: "Playfair Display", serif;
       font-weight: 600;
       font-style: italic;
-      font-size: clamp(2.4rem, 7.5vw, 3.0rem); /* Увеличен */
+      font-size: clamp(2rem, 6.5vw, 2.6rem);
       color: #fefad8;
       letter-spacing: 4px;
       text-transform: uppercase;
@@ -852,7 +857,7 @@
     .final-subtitle {
       font-family: "Bad Script", cursive;
       font-weight: 400;
-      font-size: clamp(1.3rem, 4.8vw, 1.7rem); /* Увеличен */
+      font-size: clamp(1.05rem, 4vw, 1.4rem);
       color: #fefad8;
       text-align: center;
       line-height: 1.7;
@@ -877,7 +882,7 @@
     .form-label {
       font-family: "Bad Script", cursive;
       font-weight: 400;
-      font-size: 1.3rem; /* Увеличен */
+      font-size: 1.1rem;
       color: #fefad8;
       letter-spacing: 0.5px;
     }
@@ -889,7 +894,7 @@
       padding: 10px 4px;
       font-family: "Bad Script", cursive;
       font-weight: 400;
-      font-size: 1.3rem; /* Увеличен */
+      font-size: 1.1rem;
       color: #fefad8;
       outline: none;
       transition: border-color 0.2s ease;
@@ -917,7 +922,7 @@
       gap: 10px;
       font-family: "Bad Script", cursive;
       font-weight: 400;
-      font-size: 1.3rem; /* Увеличен */
+      font-size: 1.1rem;
       color: #fefad8;
       cursor: pointer;
     }
@@ -983,7 +988,7 @@
       gap: 8px;
       font-family: "Bad Script", cursive;
       font-weight: 400;
-      font-size: 1.25rem; /* Увеличен */
+      font-size: 1.05rem;
       color: #fefad8;
       cursor: pointer;
     }
@@ -995,7 +1000,7 @@
       font-family: "Playfair Display", serif;
       font-weight: 600;
       font-style: italic;
-      font-size: 1.3rem; /* Увеличен */
+      font-size: 1.1rem;
       letter-spacing: 3px;
       color: #c9a8cc;
       cursor: pointer;
@@ -1045,7 +1050,7 @@
       font-family: "Cormorant Garamond", serif;
       font-weight: 500;
       color: #c9a8cc;
-      font-size: clamp(1.2rem, 3.8vw, 1.5rem); /* Увеличен */
+      font-size: clamp(1rem, 3.2vw, 1.2rem);
       text-transform: uppercase;
       letter-spacing: 4px;
       padding-right: 50px;
@@ -1063,7 +1068,7 @@
       font-family: "Playfair Display", serif;
       font-weight: 600;
       font-style: italic;
-      font-size: clamp(2.0rem, 6.5vw, 2.6rem); /* Увеличен */
+      font-size: clamp(1.6rem, 5.5vw, 2.2rem);
       color: #fefad8;
       letter-spacing: 2px;
       line-height: 1.3;
@@ -1072,7 +1077,7 @@
     .final-small {
       font-family: "Bad Script", cursive;
       font-weight: 400;
-      font-size: clamp(1.4rem, 5vw, 1.8rem); /* Увеличен */
+      font-size: clamp(1.1rem, 4.2vw, 1.5rem);
       color: #fefad8;
       letter-spacing: 1px;
       margin-top: 6px;
@@ -1080,13 +1085,13 @@
 
     /* ============ АДАПТИВНЫЕ МЕДИА-ЗАПРОСЫ ============ */
     @media (max-width: 480px) {
-      .first-content { padding: 0.5vh 12px 0; }
-      .title-block { margin-bottom: 4px; }
-      .primary-title { font-size: clamp(4.0rem, 16vw, 5.5rem); }
-      .sub-title { font-size: clamp(1.6rem, 5.5vw, 2.0rem); }
-      .dialog-text { font-size: clamp(1.1rem, 4.2vw, 1.4rem); }
+      .first-content { padding: 0.2vh 12px 0; }
+      .title-block { margin-bottom: 2px; }
+      .primary-title { font-size: clamp(4.5rem, 18vw, 6rem); }
+      .sub-title { font-size: clamp(1.8rem, 6vw, 2.4rem); }
+      .dialog-text { font-size: clamp(1.2rem, 4.5vw, 1.6rem); }
       .dialog-container { gap: 4px; }
-      .dialog-area { margin-top: 4px; }
+      .dialog-area { margin-top: 2px; }
       .hero-image-section { max-height: 65vh; }
       .kids-image { max-height: 65vh; }
       .kids-marquee { padding: 6px 0; }
@@ -1109,26 +1114,27 @@
       .dresscode-container { gap: 18px; }
       .gift-image { width: min(90%, 280px); }
       .drinks-grid { grid-template-columns: 1fr; gap: 10px; }
-      .submit-btn { min-width: 180px; padding: 14px 30px; font-size: 1.1rem; margin-bottom: 10px; }
+      .submit-btn { min-width: 180px; padding: 14px 30px; font-size: 1rem; margin-bottom: 10px; }
       .final-container { gap: 22px; }
-      .big-date { font-size: clamp(3.5rem, 13vw, 4.5rem); }
+      .big-date { font-size: clamp(2.8rem, 11vw, 3.8rem); }
       .location-content { gap: 16px; }
-      .invitation-greeting { font-size: clamp(1.5rem, 5.5vw, 1.9rem); }
-      .dresscode-text { font-size: clamp(1.2rem, 4.8vw, 1.5rem); }
-      .wishes-text { font-size: clamp(1.1rem, 4.5vw, 1.4rem); }
-      .location-btn { padding: 12px 26px; font-size: 1.1rem; }
+      .invitation-greeting { font-size: clamp(1.2rem, 4.5vw, 1.6rem); }
+      .dresscode-text { font-size: clamp(1rem, 4vw, 1.25rem); }
+      .wishes-text { font-size: clamp(0.95rem, 3.8vw, 1.15rem); }
+      .location-btn { padding: 12px 26px; font-size: 1rem; }
       .final-form { gap: 16px; }
-      .final-subtitle { font-size: clamp(1.1rem, 4.5vw, 1.4rem); }
+      .final-subtitle { font-size: clamp(0.95rem, 3.8vw, 1.15rem); }
       .final-wishes { margin-top: 15px; }
       .date-marquee-wrapper { margin-top: 6px; }
       .slider-title { font-size: clamp(1.6rem, 5.5vw, 2.0rem); }
       .slider-btn { width: 36px; height: 36px; font-size: 1.0rem; }
+      .slider-slide img { aspect-ratio: 3 / 2; }
     }
 
     @media (min-width: 481px) and (max-width: 767px) {
-      .first-content { padding: 1vh 18px 0; }
-      .title-block { margin-bottom: 5px; }
-      .dialog-area { margin-top: 5px; }
+      .first-content { padding: 0.5vh 18px 0; }
+      .title-block { margin-bottom: 3px; }
+      .dialog-area { margin-top: 3px; }
       .hero-image-section { max-height: 65vh; }
       .kids-image { max-height: 65vh; }
       .screen-second { padding: 25px 22px 28px; }
@@ -1147,16 +1153,18 @@
       .final-container { gap: 26px; }
       .kids-marquee-track span { font-size: clamp(1.0rem, 3.0vw, 1.2rem); }
       .final-wishes { margin-top: 18px; }
+      .slider-slide img { aspect-ratio: 3 / 2; }
     }
 
     @media (min-width: 768px) and (max-width: 1024px) {
-      .primary-title { font-size: 7.5rem; }
-      .sub-title { font-size: 2.4rem; }
-      .dialog-text { font-size: 1.8rem; }
+      .primary-title { font-size: 8rem; }
+      .sub-title { font-size: 2.8rem; }
+      .dialog-text { font-size: 2rem; }
       .location-photo-wrapper { max-width: 450px; }
       .calendar-image-wrapper { max-width: 450px; }
       .hero-image-section { max-height: 65vh; }
       .kids-image { max-height: 65vh; }
+      .slider-slide img { aspect-ratio: 3 / 2; }
     }
 
     @media (min-width: 768px) {
@@ -1164,11 +1172,13 @@
         max-width: 620px; 
         box-shadow: 0 0 50px rgba(60, 42, 60, 0.05); 
         border-radius: 32px;
-        min-height: 95vh;
+        min-height: 100vh;
+        min-height: 100dvh;
       }
       body { 
         background: #fefad8; 
-        padding: 20px 0; 
+        padding: 0; 
+        align-items: center;
       }
       .gift-image { width: min(90%, 420px); }
       .screen-second { padding: 30px 32px 35px; }
@@ -1187,16 +1197,17 @@
       .final-wishes { margin-top: 22px; }
       .hero-image-section { max-height: 65vh; }
       .kids-image { max-height: 65vh; }
-      .first-content { padding: 1.5vh 24px 0; }
-      .title-block { margin-bottom: 8px; }
-      .dialog-area { margin-top: 8px; }
+      .first-content { padding: 0.8vh 24px 0; }
+      .title-block { margin-bottom: 4px; }
+      .dialog-area { margin-top: 4px; }
+      .slider-slide img { aspect-ratio: 3 / 2; }
     }
   </style>
 </head>
 <body>
 
 <main class="invitation-card">
-  <!-- ЭКРАН 1 — БЕЗ ОТСТУПОВ МЕЖДУ ФОТО И ЛЕНТОЙ -->
+  <!-- ЭКРАН 1 — ФИКСИРОВАННАЯ ВЫСОТА, УВЕЛИЧЕННЫЙ ШРИФТ -->
   <section class="screen screen-first">
     <div class="first-content">
       <div class="title-block fade-up-item delay-1">
@@ -1237,7 +1248,7 @@
     </div>
   </section>
 
-  <!-- ОСТАЛЬНЫЕ ЭКРАНЫ -->
+  <!-- ОСТАЛЬНЫЕ ЭКРАНЫ (стандартный шрифт) -->
   <section class="screen screen-second">
     <div class="invitation-content fade-up-item delay-1">
       <div class="invitation-greeting">
@@ -1314,9 +1325,9 @@
     </div>
   </section>
 
-  <!-- НОВЫЙ БЛОК СО СЛАЙДЕРОМ ФОТО -->
+  <!-- БЛОК СО СЛАЙДЕРОМ "НАШИ МОМЕНТЫ" -->
   <section class="screen screen-slider">
-    <div class="slider-title fade-up-item delay-1">Свадебные моменты</div>
+    <div class="slider-title fade-up-item delay-1">Наши моменты</div>
     <div class="slider-container fade-up-item delay-2">
       <div class="slider-track" id="sliderTrack">
         <div class="slider-slide"><img src="2a889f31-8133-4c47-91d1-0798c13ea38f - Tatiana Kaplina.jpeg" alt="Фото 1"></div>
