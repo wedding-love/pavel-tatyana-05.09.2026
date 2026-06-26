@@ -244,53 +244,7 @@
       word-break: break-word;
     }
 
-    .dialog-area {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0;
-      margin: 4px 0 0 0;
-      line-height: 1;
-    }
-
-    .dialog-container {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 10px;
-      flex-wrap: wrap;
-      padding: 0 2px;
-      margin: 0;
-    }
-
-    .dialog-text {
-      font-family: "Marck Script", "Brush Script MT", cursive;
-      font-weight: 400;
-      font-style: italic;
-      font-size: clamp(1.6rem, 5.5vw, 2.2rem);
-      color: #c9a8cc;
-      line-height: 1.2;
-      letter-spacing: 0.5px;
-      background: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .dialog-left {
-      text-align: left;
-      flex: 1.2;
-      min-width: 80px;
-    }
-
-    .dialog-right {
-      text-align: right;
-      flex: 0.9;
-      min-width: 50px;
-    }
-
-    /* ===== ФОТО ДЕТЕЙ — РАСТЯГИВАЕТСЯ, ЧТОБЫ ЗАПОЛНИТЬ ПРОСТРАНСТВО ===== */
+    /* ===== ФОТО ВЗРОСЛЫХ НА ГЛАВНОМ ===== */
     .hero-image-section {
       flex: 1 1 auto;
       display: flex;
@@ -313,7 +267,7 @@
       margin: 0;
     }
 
-    .kids-image {
+    .hero-image {
       width: 100%;
       height: auto;
       max-height: 100%;
@@ -327,7 +281,7 @@
       transition: all .4s ease;
     }
 
-    .kids-image:hover {
+    .hero-image:hover {
       transform: translateY(-2px);
     }
 
@@ -379,7 +333,7 @@
       }
     }
 
-    /* ============ СЛАЙДЕР ============ */
+    /* ============ СЛАЙДЕР С ДЕТЬМИ ============ */
     .slider-container {
       width: 100%;
       max-width: 420px;
@@ -402,6 +356,7 @@
       box-sizing: border-box;
       padding: 6px;
       background: #fefad8;
+      position: relative;
     }
 
     .slider-slide img {
@@ -414,6 +369,44 @@
       border: 2px solid #fefad8;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
       max-height: 60vh;
+    }
+
+    /* Реплики поверх фото в слайдере */
+    .slide-dialog {
+      position: absolute;
+      bottom: 30px;
+      left: 0;
+      right: 0;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .slide-dialog-text {
+      font-family: "Marck Script", "Brush Script MT", cursive;
+      font-weight: 400;
+      font-style: italic;
+      font-size: clamp(1.2rem, 4vw, 1.8rem);
+      color: #fefad8;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.6), 0 0 20px rgba(0,0,0,0.3);
+      line-height: 1.2;
+      letter-spacing: 0.5px;
+      background: rgba(60, 42, 60, 0.25);
+      padding: 6px 14px;
+      border-radius: 20px;
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+    }
+
+    .slide-dialog-left {
+      text-align: left;
+    }
+
+    .slide-dialog-right {
+      text-align: right;
     }
 
     .slider-controls {
@@ -1089,9 +1082,6 @@
       .title-block { margin-bottom: 2px; }
       .primary-title { font-size: clamp(4.5rem, 18vw, 6rem); }
       .sub-title { font-size: clamp(1.8rem, 6vw, 2.4rem); }
-      .dialog-text { font-size: clamp(1.2rem, 4.5vw, 1.6rem); }
-      .dialog-container { gap: 4px; }
-      .dialog-area { margin-top: 2px; }
       .kids-marquee { padding: 6px 0; }
       .kids-marquee-track span { font-size: clamp(0.9rem, 2.8vw, 1.1rem); padding: 0 25px 0 0; }
       .calendar-image-wrapper { max-width: 280px; }
@@ -1129,12 +1119,13 @@
       .slider-container { max-width: 300px; }
       .slider-slide img { aspect-ratio: 3 / 4; max-height: 50vh; }
       .slider-controls { gap: 14px; margin-top: 12px; }
+      .slide-dialog-text { font-size: clamp(1rem, 3.5vw, 1.3rem); padding: 4px 12px; }
+      .slide-dialog { bottom: 20px; padding: 0 12px; }
     }
 
     @media (min-width: 481px) and (max-width: 767px) {
       .first-content { padding: 2vh 18px 0; }
       .title-block { margin-bottom: 3px; }
-      .dialog-area { margin-top: 3px; }
       .screen-second { padding: 25px 22px 28px; }
       .invitation-content { gap: 12px; padding-top: 18px; }
       .screen-third { padding: 45px 22px; }
@@ -1158,7 +1149,6 @@
     @media (min-width: 768px) and (max-width: 1024px) {
       .primary-title { font-size: 8rem; }
       .sub-title { font-size: 2.8rem; }
-      .dialog-text { font-size: 2rem; }
       .location-photo-wrapper { max-width: 450px; }
       .calendar-image-wrapper { max-width: 450px; }
       .slider-slide img { aspect-ratio: 3 / 4; }
@@ -1195,7 +1185,6 @@
       .final-wishes { margin-top: 22px; }
       .first-content { padding: 2vh 24px 0; }
       .title-block { margin-bottom: 4px; }
-      .dialog-area { margin-top: 4px; }
       .slider-slide img { aspect-ratio: 3 / 4; }
       .slider-container { max-width: 400px; }
     }
@@ -1204,26 +1193,21 @@
 <body>
 
 <main class="invitation-card">
-  <!-- ЭКРАН 1 — ПОЛНАЯ ВЫСОТА, ЛЕНТА ВНИЗУ -->
+  <!-- ЭКРАН 1 — ПОЛНАЯ ВЫСОТА, ЛЕНТА ВНИЗУ, ФОТО ВЗРОСЛЫХ -->
   <section class="screen screen-first">
     <div class="first-content">
       <div class="title-block fade-up-item delay-1">
         <span class="sub-title">наконец-то</span>
         <span class="primary-title">мы женимся</span>
       </div>
-      <div class="dialog-area">
-        <div class="dialog-container fade-up-item delay-2">
-          <div class="dialog-text dialog-left">— интересно, кто будет моим мужем, когда вырасту?</div>
-          <div class="dialog-text dialog-right">— им буду я!</div>
-        </div>
-      </div>
     </div>
-    <div class="hero-image-section hero-fade delay-3">
+    <div class="hero-image-section hero-fade delay-2">
       <div class="full-width-heart">
-        <img src="дети.png" alt="Счастливые дети" class="kids-image" onerror="this.src='https://placehold.co/600x400/fefad8/c9a8cc?text=👶+Дети'; this.onerror=null;">
+        <!-- Здесь фото из слайдера (взрослые) -->
+        <img src="7447c377-2193-4f6e-a0ea-e8de186a8de6 - Tatiana Kaplina.jpeg" alt="Павел и Татьяна" class="hero-image" onerror="this.src='https://placehold.co/600x400/fefad8/c9a8cc?text=👫+Павел+и+Татьяна'; this.onerror=null;">
       </div>
     </div>
-    <div class="kids-marquee fade-up-item delay-4">
+    <div class="kids-marquee fade-up-item delay-3">
       <div class="kids-marquee-track">
         <span>ВЫ ПРИГЛАШЕНЫ</span>
         <span>ВЫ ПРИГЛАШЕНЫ</span>
@@ -1322,16 +1306,46 @@
     </div>
   </section>
 
-  <!-- БЛОК СО СЛАЙДЕРОМ "НАШИ МОМЕНТЫ" -->
+  <!-- БЛОК СО СЛАЙДЕРОМ — ТЕПЕРЬ С ДЕТЬМИ И РЕПЛИКАМИ -->
   <section class="screen screen-slider">
-    <div class="slider-title fade-up-item delay-1">Наши моменты</div>
+    <div class="slider-title fade-up-item delay-1">Детские мечты</div>
     <div class="slider-container fade-up-item delay-2">
       <div class="slider-track" id="sliderTrack">
-        <div class="slider-slide"><img src="7447c377-2193-4f6e-a0ea-e8de186a8de6 - Tatiana Kaplina.jpeg" alt="Фото 1"></div>
-        <div class="slider-slide"><img src="2a889f31-8133-4c47-91d1-0798c13ea38f - Tatiana Kaplina.jpeg" alt="Фото 2"></div>
-        <div class="slider-slide"><img src="IMG_0208 - Tatiana Kaplina.jpeg" alt="Фото 3"></div>
-        <div class="slider-slide"><img src="F46B52D4-FAC7-4A59-9E0B-4E3900EB7B16 - Tatiana Kaplina.webp" alt="Фото 4"></div>
-        <div class="slider-slide"><img src="IMG_0556 - Tatiana Kaplina.jpeg" alt="Фото 5"></div>
+        <div class="slider-slide">
+          <img src="дети.png" alt="Дети" onerror="this.src='https://placehold.co/600x400/fefad8/c9a8cc?text=👶+Дети'; this.onerror=null;">
+          <div class="slide-dialog">
+            <span class="slide-dialog-text slide-dialog-left">— интересно, кто будет моим мужем, когда вырасту?</span>
+            <span class="slide-dialog-text slide-dialog-right">— им буду я!</span>
+          </div>
+        </div>
+        <div class="slider-slide">
+          <img src="2a889f31-8133-4c47-91d1-0798c13ea38f - Tatiana Kaplina.jpeg" alt="Детство" onerror="this.src='https://placehold.co/600x400/fefad8/c9a8cc?text=👶+Детство'; this.onerror=null;">
+          <div class="slide-dialog">
+            <span class="slide-dialog-text slide-dialog-left">— а мы поженимся?</span>
+            <span class="slide-dialog-text slide-dialog-right">— обязательно!</span>
+          </div>
+        </div>
+        <div class="slider-slide">
+          <img src="IMG_0208 - Tatiana Kaplina.jpeg" alt="Дружба" onerror="this.src='https://placehold.co/600x400/fefad8/c9a8cc?text=👫+Дружба'; this.onerror=null;">
+          <div class="slide-dialog">
+            <span class="slide-dialog-text slide-dialog-left">— ты будешь моей невестой?</span>
+            <span class="slide-dialog-text slide-dialog-right">— только твоей!</span>
+          </div>
+        </div>
+        <div class="slider-slide">
+          <img src="F46B52D4-FAC7-4A59-9E0B-4E3900EB7B16 - Tatiana Kaplina.webp" alt="Мечты" onerror="this.src='https://placehold.co/600x400/fefad8/c9a8cc?text=🌟+Мечты'; this.onerror=null;">
+          <div class="slide-dialog">
+            <span class="slide-dialog-text slide-dialog-left">— мы всегда будем вместе?</span>
+            <span class="slide-dialog-text slide-dialog-right">— навсегда!</span>
+          </div>
+        </div>
+        <div class="slider-slide">
+          <img src="IMG_0556 - Tatiana Kaplina.jpeg" alt="Счастье" onerror="this.src='https://placehold.co/600x400/fefad8/c9a8cc?text=💕+Счастье'; this.onerror=null;">
+          <div class="slide-dialog">
+            <span class="slide-dialog-text slide-dialog-left">— я так тебя люблю!</span>
+            <span class="slide-dialog-text slide-dialog-right">— и я тебя!</span>
+          </div>
+        </div>
       </div>
     </div>
     <div class="slider-controls">
