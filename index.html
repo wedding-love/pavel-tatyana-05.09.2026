@@ -183,7 +183,6 @@
       min-height: auto;
     }
 
-    /* БЛОК С ДЕТЬМИ — БЕЗ ОТСТУПОВ СНИЗУ */
     .screen-kids {
       background-color: #fefad8;
       padding: 40px 28px 0 28px;
@@ -245,7 +244,6 @@
       word-break: break-word;
     }
 
-    /* ===== ВЕРТИКАЛЬНОЕ ФОТО (ДЛИНА > ШИРИНА) ===== */
     .hero-image-section {
       flex: 1 1 auto;
       display: flex;
@@ -1003,6 +1001,25 @@
       margin-top: 6px;
     }
 
+    /* Сообщение об успехе */
+    .success-message {
+      text-align: center;
+      margin-top: 15px;
+      padding: 12px 20px;
+      background: rgba(255, 250, 216, 0.25);
+      border-radius: 8px;
+      font-family: "Bad Script", cursive;
+      font-size: 1.1rem;
+      color: #fefad8;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    .success-message.show {
+      display: block;
+      opacity: 1;
+    }
+
     /* ============ АДАПТИВНЫЕ МЕДИА-ЗАПРОСЫ ============ */
     @media (max-width: 480px) {
       .first-content { padding: 2vh 12px 0; }
@@ -1229,65 +1246,63 @@
     </div>
   </section>
 
-  <!-- БЛОК С ДЕТЬМИ — ПРИЛЕГАЕТ К АНКЕТЕ (БЕЗ ОТСТУПА СНИЗУ) -->
+  <!-- БЛОК С ДЕТЬМИ -->
   <section class="screen screen-kids">
     <div class="kids-block fade-up-item delay-1">
-      <!-- Заголовок -->
       <div class="kids-title">Детские мечты</div>
-      
-      <!-- Реплики над фото -->
       <div class="kids-dialog-area">
         <div class="kids-dialog-container">
           <span class="kids-dialog-text kids-dialog-left">— интересно, кто будет моим мужем, когда вырасту?</span>
           <span class="kids-dialog-text kids-dialog-right">— им буду я!</span>
         </div>
       </div>
-      
-      <!-- Фото детей — без рамок и отступов снизу -->
       <div class="kids-photo-wrapper">
         <img src="дети.png" alt="Счастливые дети" onerror="this.src='https://placehold.co/600x800/fefad8/c9a8cc?text=👶+Дети'; this.onerror=null;">
       </div>
     </div>
   </section>
 
-  <!-- АНКЕТА — ПРИЛЕГАЕТ ВПЛОТНУЮ К ФОТО ДЕТЕЙ -->
+  <!-- АНКЕТА — С ПОДКЛЮЧЕННОЙ ФОРМОЙ FORMPREE -->
   <section class="screen screen-final">
     <div class="final-container">
       <div class="final-title fade-up-item delay-1">Анкета гостя</div>
       <div class="final-subtitle fade-up-item delay-2">Пожалуйста, подтвердите своё присутствие до 05.08.2026. Это поможет нам в организации праздника!</div>
 
-      <form class="final-form fade-up-item delay-3" id="guestForm">
+      <form class="final-form fade-up-item delay-3" id="guestForm" action="https://formspree.io/f/mwvdqnnw" method="POST">
+        <input type="hidden" name="_subject" value="Новый ответ на приглашение на свадьбу">
+        
         <div class="form-group">
           <label class="form-label">Имя и фамилия</label>
-          <input type="text" class="form-input" placeholder="" required>
+          <input type="text" class="form-input" name="Имя" placeholder="" required>
         </div>
 
         <div class="form-group">
           <label class="form-label">Планируете ли присутствовать на торжестве?</label>
           <div class="radio-group">
-            <label class="radio-label"><input type="radio" name="attendance" value="yes" required> Да, буду</label>
-            <label class="radio-label"><input type="radio" name="attendance" value="no"> К сожалению, нет</label>
+            <label class="radio-label"><input type="radio" name="Присутствие" value="Да, буду" required> Да, буду</label>
+            <label class="radio-label"><input type="radio" name="Присутствие" value="К сожалению, нет"> К сожалению, нет</label>
           </div>
         </div>
 
         <div class="form-group">
           <label class="form-label">Напитки (выберите предпочтения)</label>
           <div class="drinks-grid">
-            <label class="drink-check"><input type="checkbox" value="шампанское"> Шампанское</label>
-            <label class="drink-check"><input type="checkbox" value="вино белое"> Вино белое</label>
-            <label class="drink-check"><input type="checkbox" value="вино красное"> Вино красное</label>
-            <label class="drink-check"><input type="checkbox" value="водка"> Водка</label>
-            <label class="drink-check"><input type="checkbox" value="коньяк"> Коньяк</label>
-            <label class="drink-check"><input type="checkbox" value="безалкогольные"> Безалкогольные</label>
+            <label class="drink-check"><input type="checkbox" name="Напитки" value="шампанское"> Шампанское</label>
+            <label class="drink-check"><input type="checkbox" name="Напитки" value="вино белое"> Вино белое</label>
+            <label class="drink-check"><input type="checkbox" name="Напитки" value="вино красное"> Вино красное</label>
+            <label class="drink-check"><input type="checkbox" name="Напитки" value="водка"> Водка</label>
+            <label class="drink-check"><input type="checkbox" name="Напитки" value="коньяк"> Коньяк</label>
+            <label class="drink-check"><input type="checkbox" name="Напитки" value="безалкогольные"> Безалкогольные</label>
           </div>
         </div>
 
         <div class="form-group">
           <label class="form-label">Аллергия / непереносимость продуктов (если есть)</label>
-          <textarea class="form-textarea" placeholder=""></textarea>
+          <textarea class="form-textarea" name="Аллергии" placeholder=""></textarea>
         </div>
 
-        <button type="button" class="submit-btn" onclick="submitForm()">Отправить</button>
+        <button type="submit" class="submit-btn">Отправить</button>
+        <div id="formMessage" class="success-message">Спасибо! Ваш ответ отправлен. Ждём вас!</div>
       </form>
 
       <div class="date-marquee-wrapper fade-up-item delay-4">
@@ -1378,15 +1393,56 @@
     setAppHeight();
   })();
 
-  function submitForm() {
-    const name = document.querySelector('.final-form .form-input')?.value;
-    const attendance = document.querySelector('input[name="attendance"]:checked')?.value;
-    if (!name || !attendance) {
-      alert('Пожалуйста, заполните имя и выберите вариант присутствия');
-      return;
+  // ===== ОТПРАВКА ФОРМЫ НА FORMPREE =====
+  (function() {
+    const form = document.getElementById('guestForm');
+    const messageDiv = document.getElementById('formMessage');
+
+    if (form) {
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const nameInput = form.querySelector('input[name="Имя"]');
+        if (!nameInput.value.trim()) {
+          alert('Пожалуйста, укажите ваше имя');
+          nameInput.focus();
+          return;
+        }
+
+        const attendance = form.querySelector('input[name="Присутствие"]:checked');
+        if (!attendance) {
+          alert('Пожалуйста, выберите вариант присутствия');
+          return;
+        }
+
+        const formData = new FormData(form);
+
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+
+          if (response.ok) {
+            messageDiv.classList.add('show');
+            form.reset();
+            
+            setTimeout(() => {
+              messageDiv.classList.remove('show');
+            }, 5000);
+          } else {
+            alert('Произошла ошибка при отправке. Пожалуйста, попробуйте позже или свяжитесь с нами напрямую.');
+          }
+        } catch (error) {
+          console.error('Ошибка:', error);
+          alert('Не удалось отправить форму. Проверьте подключение к интернету или попробуйте позже.');
+        }
+      });
     }
-    alert('Спасибо! Ваш ответ сохранён. Ждём вас на свадьбе!');
-  }
+  })();
 </script>
 </body>
 </html>
