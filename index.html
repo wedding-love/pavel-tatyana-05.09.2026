@@ -1262,13 +1262,14 @@
     </div>
   </section>
 
-  <!-- АНКЕТА — С ПОДКЛЮЧЕННОЙ ФОРМОЙ FORMPREE -->
+  <!-- АНКЕТА С ПОДКЛЮЧЕННОЙ ФОРМОЙ FORMPREE -->
   <section class="screen screen-final">
     <div class="final-container">
       <div class="final-title fade-up-item delay-1">Анкета гостя</div>
       <div class="final-subtitle fade-up-item delay-2">Пожалуйста, подтвердите своё присутствие до 05.08.2026. Это поможет нам в организации праздника!</div>
 
-      <form class="final-form fade-up-item delay-3" id="guestForm" action="https://formspree.io/f/mwvdqnnw" method="POST">
+      <!-- ОБНОВЛЕННАЯ ФОРМА С НОВЫМ ACTION -->
+      <form class="final-form fade-up-item delay-3" id="guestForm" action="https://formspree.io/f/mojolnyd" method="POST">
         <input type="hidden" name="_subject" value="Новый ответ на приглашение на свадьбу">
         
         <div class="form-group">
@@ -1393,7 +1394,7 @@
     setAppHeight();
   })();
 
-  // ===== ОТПРАВКА ФОРМЫ НА FORMPREE =====
+  // ===== ОТПРАВКА ФОРМЫ НА FORMPREE (ОБНОВЛЕННЫЙ ЭНДПОИНТ) =====
   (function() {
     const form = document.getElementById('guestForm');
     const messageDiv = document.getElementById('formMessage');
