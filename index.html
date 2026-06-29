@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Caveat:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Marck+Script&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
   <style>
-    /* ----- СТИЛИ ----- */
+    /* ----- СТИЛИ (полностью сохранены) ----- */
     * {
       margin: 0;
       padding: 0;
@@ -1001,7 +1001,7 @@
       margin-top: 6px;
     }
 
-    /* Сообщение об успехе */
+    /* Сообщение об успехе (появляется после возврата) */
     .success-message {
       text-align: center;
       margin-top: 15px;
@@ -1018,6 +1018,10 @@
     .success-message.show {
       display: block;
       opacity: 1;
+    }
+
+    #thank-you {
+      scroll-margin-top: 20px;
     }
 
     /* ============ АДАПТИВНЫЕ МЕДИА-ЗАПРОСЫ ============ */
@@ -1134,7 +1138,7 @@
 <body>
 
 <main class="invitation-card">
-  <!-- ЭКРАН 1 — ВЕРТИКАЛЬНОЕ ФОТО (IMG_0556 - Tatiana Kaplina.jpeg) -->
+  <!-- ЭКРАН 1 — ВЕРТИКАЛЬНОЕ ФОТО -->
   <section class="screen screen-first">
     <div class="first-content">
       <div class="title-block fade-up-item delay-1">
@@ -1262,14 +1266,21 @@
     </div>
   </section>
 
-  <!-- АНКЕТА С ПОДКЛЮЧЕННОЙ ФОРМОЙ FORMPREE -->
-  <section class="screen screen-final">
+  <!-- АНКЕТА — С ОТПРАВКОЙ ЧЕРЕЗ FORMPREE И ВОЗВРАТОМ -->
+  <section class="screen screen-final" id="thank-you">
     <div class="final-container">
       <div class="final-title fade-up-item delay-1">Анкета гостя</div>
       <div class="final-subtitle fade-up-item delay-2">Пожалуйста, подтвердите своё присутствие до 05.08.2026. Это поможет нам в организации праздника!</div>
 
-      <!-- ОБНОВЛЕННАЯ ФОРМА С НОВЫМ ACTION -->
-      <form class="final-form fade-up-item delay-3" id="guestForm" action="https://formspree.io/f/mojolnyd" method="POST">
+      <!-- ФОРМА С ПРАВИЛЬНЫМ ACTION И РЕДИРЕКТОМ -->
+      <form class="final-form fade-up-item delay-3" 
+            id="guestForm" 
+            action="https://formspree.io/f/mojolnyd" 
+            method="POST"
+            target="_blank">
+        
+        <!-- Скрытое поле для редиректа обратно на страницу -->
+        <input type="hidden" name="_redirect" value="https://ваш-сайт.com/#thank-you">
         <input type="hidden" name="_subject" value="Новый ответ на приглашение на свадьбу">
         
         <div class="form-group">
@@ -1303,7 +1314,9 @@
         </div>
 
         <button type="submit" class="submit-btn">Отправить</button>
-        <div id="formMessage" class="success-message">Спасибо! Ваш ответ отправлен. Ждём вас!</div>
+        
+        <!-- Сообщение об успехе (появляется после возврата со страницы Formspree) -->
+        <div id="formMessage" class="success-message">✅ Спасибо! Ваш ответ отправлен. Ждём вас!</div>
       </form>
 
       <div class="date-marquee-wrapper fade-up-item delay-4">
@@ -1394,54 +1407,22 @@
     setAppHeight();
   })();
 
-  // ===== ОТПРАВКА ФОРМЫ НА FORMPREE (ОБНОВЛЕННЫЙ ЭНДПОИНТ) =====
+  // ===== ОБРАБОТКА ВОЗВРАТА С FORMPREE =====
   (function() {
-    const form = document.getElementById('guestForm');
-    const messageDiv = document.getElementById('formMessage');
-
-    if (form) {
-      form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-
-        const nameInput = form.querySelector('input[name="Имя"]');
-        if (!nameInput.value.trim()) {
-          alert('Пожалуйста, укажите ваше имя');
-          nameInput.focus();
-          return;
-        }
-
-        const attendance = form.querySelector('input[name="Присутствие"]:checked');
-        if (!attendance) {
-          alert('Пожалуйста, выберите вариант присутствия');
-          return;
-        }
-
-        const formData = new FormData(form);
-
-        try {
-          const response = await fetch(form.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-              'Accept': 'application/json'
-            }
-          });
-
-          if (response.ok) {
-            messageDiv.classList.add('show');
-            form.reset();
-            
-            setTimeout(() => {
-              messageDiv.classList.remove('show');
-            }, 5000);
-          } else {
-            alert('Произошла ошибка при отправке. Пожалуйста, попробуйте позже или свяжитесь с нами напрямую.');
-          }
-        } catch (error) {
-          console.error('Ошибка:', error);
-          alert('Не удалось отправить форму. Проверьте подключение к интернету или попробуйте позже.');
-        }
-      });
+    // Показываем сообщение об успехе, если в URL есть якорь #thank-you
+    if (window.location.hash === '#thank-you') {
+      const messageDiv = document.getElementById('formMessage');
+      if (messageDiv) {
+        messageDiv.classList.add('show');
+        // Плавно скроллим к форме
+        setTimeout(() => {
+          document.getElementById('thank-you')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 300);
+        // Скрываем сообщение через 7 секунд
+        setTimeout(() => {
+          messageDiv.classList.remove('show');
+        }, 7000);
+      }
     }
   })();
 </script>
